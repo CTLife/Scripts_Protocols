@@ -1,1 +1,8 @@
 conda info --envs
+conda create --name  ChiRA
+conda activate ChiRA
+conda deactivate
+
+
+
+
