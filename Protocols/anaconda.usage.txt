@@ -1,6 +1,7 @@
 conda info --envs
 conda create --name  ChiRA
 conda activate ChiRA
+conda install -c conda-forge -c bioconda chira
 conda deactivate
 
 
