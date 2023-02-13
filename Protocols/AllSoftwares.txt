@@ -1,46 +1,40 @@
-## install anaconda
-## install mamba,  https://mamba.readthedocs.io/en/latest/installation.html
-
-
 #################################################################################################   
 ## 1_Pre-align  33+27
+barcode_split_trim.pl  --version    ## https://github.com/mfcovington/auto_barcode
+biobloommaker    --version          ## https://github.com/bcgsc/biobloom
+bustools | grep bustools            ## https://github.com/BUStools/bustools
+csvtk  version                      ## https://github.com/shenwei356/csvtk
+defastq  2>&1  | grep version       ## https://github.com/OpenGene/defastq
+fasten_regex  --version             ## https://github.com/lskatz/fasten
+fastq-multx  2>&1 | grep Version    ## https://github.com/brwnj/fastq-multx
+fastq_screen    --version           ## https://github.com/StevenWingett/FastQ-Screen
+fastq-uniq      --version           ## https://github.com/dcjones/fastq-tools
+fastqc  --version                   ## https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
+FASTQuick    2>&1  |  grep Version  ## https://github.com/Griffan/FASTQuick
+fastv  --version                    ## https://github.com/OpenGene/fastv
+fastx_clipper  -h   | grep "0.0"    ## https://github.com/agordon/fastx_toolkit
+kmc   | grep "ver. "                ## https://github.com/refresh-bio/KMC
+MinIONQC.R  -h                      ## https://github.com/roblanf/minion_qc
+mutscan   --help                    ## https://github.com/OpenGene/MutScan
+prinseq-lite.pl  --version          ## https://prinseq.sourceforge.net/
+qc3.pl  -h  2>&1  | grep Version    ## https://github.com/slzhao/QC3
+seqkit   version                    ## https://github.com/shenwei356/seqkit
+seqtk                               ## https://github.com/lh3/seqtk
+seqyclean  -h  | grep "Version"     ## https://github.com/ibest/seqyclean
+fastq-dump    --version             ## https://github.com/ncbi/sra-tools
+trim_galore   --version             ## https://github.com/FelixKrueger/TrimGalore
+trimmomatic.jar  -version           ## https://github.com/usadellab/Trimmomatic
+unikmer  version                    ## https://github.com/shenwei356/unikmer
 
-
-barcode_split_trim.pl  --version  ## https://github.com/mfcovington/auto_barcode
-biobloommaker    --version        ## https://github.com/bcgsc/biobloom
-bustools | grep bustools          ## https://github.com/BUStools/bustools
-csvtk  version                    ## https://github.com/shenwei356/csvtk
-defastq  2>&1  | grep version     ## https://github.com/OpenGene/defastq
-fasten_regex  --version           ## https://github.com/lskatz/fasten
-fastq-multx  2>&1 | grep Version  ## https://github.com/brwnj/fastq-multx
-fastq_screen    --version         ## https://github.com/StevenWingett/FastQ-Screen
-fastq-uniq      --version         ## https://github.com/dcjones/fastq-tools
-
-fastqc  --version                 ## https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
-FASTQuick    2>&1  |  grep Version
-fastv  --version
-fastx_clipper  -h   | grep "0.0" ## fastx_toolkit
-kmc   | grep "ver. "
-kmer-db | grep "version"
-MinIONQC.R  -h
-mutscan   --help
-prinseq-lite.pl  --version
-prinseq++   --version
-qc3.pl  -h  2>&1  | grep Version
-seqkit   version
-seqtk
-seqyclean  -h  | grep "Version"
-fastq-dump    --version     ## sratoolkit
-trim_galore   --version
-trimmomatic.jar  -version  ## java -jar /media/yp/1one/MyProgramFiles/1_Pre-align/Trimmomatic/trimmomatic.jar   -version
-unikmer  version
-
-AdapterRemoval   --version        ## conda install -c bioconda adapterremoval
-falco  --version                  ## conda install -c bioconda falco
-fastp   --version         ## conda install -c bioconda fastp
-FaQCs  --version  ## conda install -c bioconda faqcs
-fastq-scan   -v  ## conda install -c bioconda fastq-scan
-fastq_pre_barcodes                ## conda install -c bioconda fastq_utils
+AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
+falco  --version                    ## conda install -c bioconda falco
+fastp   --version                   ## conda install -c bioconda fastp
+FaQCs  --version                    ## conda install -c bioconda faqcs
+fastq-scan   -v                     ## conda install -c bioconda fastq-scan
+fastq_pre_barcodes                  ## conda install -c bioconda fastq_utils
+kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
+kmerdb                              ## pip install kmerdb , https://github.com/MatthewRalston/kmerdb
+prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
 
 library( "ngsReports" )
 library( "seqTools" )
@@ -69,4 +63,8 @@ barcode_splitter   --version
 pod5-inspect  -h
 bonito basecaller
 remora  infer  -h
+
+
+
+
 
