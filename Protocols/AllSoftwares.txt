@@ -8,12 +8,13 @@
 
 
 #################################################################################################   
-## 1_Pre-align  25+35
+## 1_Pre-align  26+34
 barcode_split_trim.pl  --version    ## https://github.com/mfcovington/auto_barcode
 biobloommaker    --version          ## https://github.com/bcgsc/biobloom
 bustools | grep bustools            ## https://github.com/BUStools/bustools
 csvtk  version                      ## https://github.com/shenwei356/csvtk
 defastq  2>&1  | grep version       ## https://github.com/OpenGene/defastq
+FaQCs  --version                    ## https://github.com/chienchi/FaQCs
 fasten_regex  --version             ## https://github.com/lskatz/fasten
 fastq-multx  2>&1 | grep Version    ## https://github.com/brwnj/fastq-multx
 fastq_screen    --version           ## https://github.com/StevenWingett/FastQ-Screen
@@ -45,7 +46,6 @@ library( "ShortRead" )              ## BiocManager::install("ShortRead")
 AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
 falco  --version                    ## conda install -c bioconda falco
 fastp   --version                   ## conda install -c bioconda fastp
-FaQCs  --version                    ## conda install -c bioconda faqcs
 fastq-scan   -v                     ## conda install -c bioconda fastq-scan
 fastq_pre_barcodes                  ## conda install -c bioconda fastq_utils
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
