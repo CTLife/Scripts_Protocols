@@ -3,7 +3,7 @@
 ## zip -r xxx.zip file1 file2 .... 
 ## unzip zipped_file.zip
 ## tar -xvzf xxx.tar.gz
-
+## tar -xvf archive.tar.bz2
 
 
 
