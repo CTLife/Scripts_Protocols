@@ -1,6 +1,8 @@
 ## HemTools: a collection of NGS pipelines and bioinformatic analyses
 ## https://hemtools.readthedocs.io/en/latest/
-
+## zip -r xxx.zip file1 file2 .... 
+## unzip zipped_file.zip
+## tar -xvzf xxx.tar.gz
 
 
 
@@ -77,8 +79,6 @@ remora  infer  -h
 
 ## git clone --recursive  https://github.com/smithlabcode/abismal.git
 ## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
-## zip -r xxx.zip file1 file2 .... , 
-## tar -xvzf xxx.tar.gz
 #################################################################################################   
 ## 2_Aligners  30+5
 abismal  -about  ## two-letter alphabet
