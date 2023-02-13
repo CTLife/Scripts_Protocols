@@ -1,20 +1,17 @@
 #################################################################################################   
 ## 1_Pre-align  33+27
-AdapterRemoval   --version
-barcode_split_trim.pl  --version
-biobloommaker    --version
-bustools | grep bustools
-csvtk  version
-defastq  2>&1  | grep version
-falco  --version
-FaQCs  --version
-fasten_regex  --version
-fastp   --version
-fastq-multx  2>&1 | grep Version
-fastq-scan   -v
-fastq_screen    --version
-fastq-uniq      --version   ## fastq-tools
-fastq_pre_barcodes   ## fastq_utils
+
+
+barcode_split_trim.pl  --version  ## https://github.com/mfcovington/auto_barcode
+biobloommaker    --version        ## https://github.com/bcgsc/biobloom
+bustools | grep bustools          ## https://github.com/BUStools/bustools
+csvtk  version                    ## https://github.com/shenwei356/csvtk
+defastq  2>&1  | grep version     ## https://github.com/OpenGene/defastq
+fasten_regex  --version           ## https://github.com/lskatz/fasten
+fastq-multx  2>&1 | grep Version  ## https://github.com/brwnj/fastq-multx
+fastq_screen    --version         ## https://github.com/StevenWingett/FastQ-Screen
+fastq-uniq      --version         ## https://github.com/dcjones/fastq-tools
+
 fastqc  --version
 FASTQuick    2>&1  |  grep Version
 fastv  --version
@@ -33,6 +30,13 @@ fastq-dump    --version     ## sratoolkit
 trim_galore   --version
 trimmomatic.jar  -version  ## java -jar /media/yp/1one/MyProgramFiles/1_Pre-align/Trimmomatic/trimmomatic.jar   -version
 unikmer  version
+
+AdapterRemoval   --version        ## conda install -c bioconda adapterremoval
+falco  --version                  ## conda install -c bioconda falco
+fastp   --version         ## conda install -c bioconda fastp
+FaQCs  --version  ## conda install -c bioconda faqcs
+fastq-scan   -v  ## conda install -c bioconda fastq-scan
+fastq_pre_barcodes                ## conda install -c bioconda fastq_utils
 
 library( "ngsReports" )
 library( "seqTools" )
