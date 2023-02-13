@@ -35,11 +35,11 @@ unikmer  version                    ## https://github.com/shenwei356/unikmer
 
 ## if (!require("BiocManager", quietly = TRUE)) { install.packages("BiocManager") }
 library( "ngsReports" )             ## BiocManager::install("ngsReports")
-library( "seqTools" )               ## BiocManager::install("ngsReports")
-library( "Rqc" )                    ## BiocManager::install("ngsReports")
-library( "systemPipeR" )            ## BiocManager::install("ngsReports")
-library( "qrqc" )                   ## BiocManager::install("ngsReports")
-library( "ShortRead" )              ## BiocManager::install("ngsReports")
+library( "seqTools" )               ## BiocManager::install("seqTools")
+library( "Rqc" )                    ## BiocManager::install("Rqc")
+library( "systemPipeR" )            ## BiocManager::install("systemPipeR")
+library( "qrqc" )                   ## BiocManager::install("qrqc")
+library( "ShortRead" )              ## BiocManager::install("ShortRead")
 AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
 falco  --version                    ## conda install -c bioconda falco
 fastp   --version                   ## conda install -c bioconda fastp
