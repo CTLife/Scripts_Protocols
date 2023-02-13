@@ -33,13 +33,13 @@ trim_galore   --version             ## https://github.com/FelixKrueger/TrimGalor
 trimmomatic.jar  -version           ## https://github.com/usadellab/Trimmomatic
 unikmer  version                    ## https://github.com/shenwei356/unikmer
 
-
-library( "ngsReports" )
-library( "seqTools" )
-library( "Rqc" )
-library( "systemPipeR" )
-library( "qrqc" )
-library( "ShortRead" )
+## if (!require("BiocManager", quietly = TRUE)) { install.packages("BiocManager") }
+library( "ngsReports" )             ## BiocManager::install("ngsReports")
+library( "seqTools" )               ## BiocManager::install("ngsReports")
+library( "Rqc" )                    ## BiocManager::install("ngsReports")
+library( "systemPipeR" )            ## BiocManager::install("ngsReports")
+library( "qrqc" )                   ## BiocManager::install("ngsReports")
+library( "ShortRead" )              ## BiocManager::install("ngsReports")
 AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
 falco  --version                    ## conda install -c bioconda falco
 fastp   --version                   ## conda install -c bioconda fastp
