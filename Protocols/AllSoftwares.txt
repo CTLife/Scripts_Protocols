@@ -75,3 +75,118 @@ remora  infer  -h
 
 
 
+## git clone --recursive  https://github.com/smithlabcode/abismal.git
+## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
+## zip -r xxx.zip file1 file2 .... , 
+## tar -xvzf xxx.tar.gz
+#################################################################################################   
+## 2_Aligners  30+5
+abismal  -about  ## two-letter alphabet
+Arioc
+bbmap.sh  --version
+biscuit  version
+bismark  --version
+bowtie   --version
+bowtie2  --version
+bwa
+bwa-mem2.avx512bw   version  ##  bwa-mem2.avx2  mem
+gem-mapper   --version
+gmap --version  ## gsnap  --version
+graphmap
+hicup   --version
+hisat2  --version   ## hisat-3n  --version  , hisat2_extract_snps_haplotypes_VCF.py   -h
+kallisto  version
+lastal  --version
+minigraph  --version
+minimap2  --version
+test-mwf  ## miniwfa
+rsem-calculate-expression  --version
+salmon   --version  ## conda install -c bioconda salmon,   which generateDecoyTranscriptome.sh
+## seqan3
+snap-aligner  2>&1  | grep version
+SNPsplit  --version
+STAR  --version
+subread-align  -v ## featureCounts  -v , subread-fullscan
+## UNCALLED
+snp2h5  ## WASP
+align_benchmark  -h  ##WFA
+winnowmap  --version
+
+library( "alpine" )
+mrsfast      --version
+alevin-fry   --version  ##  framework for single-cell analysis
+mirge3  #  miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
+superstr    --help   ## A lightweight, alignment-free utility for detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
+
+conda create -n myenv1 -c bioconda -c conda-forge superstr  
+conda activate myenv1
+conda deactivate  myenv1
+conda create -n myenv2
+conda activate myenv2 
+which python 
+python -m pip install --user cutadapt reportlab==3.5.42 biopython==1.78  scikit-learn==0.23.1  hypothesis==5.15.1 pytest==5.4.2  scipy==1.4.1  matplotlib==3.2.1  joblib==0.15.1  pandas==1.0.3 future==0.18.2
+python -m pip install --user mirge3
+
+
+
+
+
+
+
+
+#################################################################################################
+##  3_BAM_QC  26+17
+run_bam_qc.py  --version
+bamstats   --version
+bamtools   --version
+bam help |  grep Version  ## bamUtil
+bcftools  -v
+bamcollate2  --version  ## biobambam2
+busco  -v  ## which busco 
+which chase.jar
+which fgbio.jar
+goleft -v
+tabix 2>&1  | grep Version
+# iSeqQC_shinyapp
+mosdepth   --version
+which cal_mrin.R
+which run_spp.R
+which picard.jar
+preseq
+which QoRTs.jar
+qualimap   -v
+quast.py  --version
+RQC-parallel-qc  -h
+rnaseqc --version
+sambamba   --version
+samstat   --version
+which SAMstats
+samtools version
+
+IDR ## (IDRfilter in R package ChIPpeakAnno)
+library( BatchQC )
+library( QuasR )
+library( scater )
+library( spp )
+library( idr2d  )
+library( MultiRankSeq  )
+library( scRNABatchQC  )
+library(Trumpet)
+mIDR    ## python3
+RSeQC   ## python3
+RNA-SeQC   ## python3
+jcvi 
+mirtop
+mirtrace  -v 
+slamdunk  --version 
+deeptools  --version 
+
+
+
+
+
+
+
+
+
+.
