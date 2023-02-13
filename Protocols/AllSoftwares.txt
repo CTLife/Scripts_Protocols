@@ -1,3 +1,10 @@
+## HemTools: a collection of NGS pipelines and bioinformatic analyses
+## https://hemtools.readthedocs.io/en/latest/
+
+
+
+
+
 #################################################################################################   
 ## 1_Pre-align  33+27
 barcode_split_trim.pl  --version    ## https://github.com/mfcovington/auto_barcode
