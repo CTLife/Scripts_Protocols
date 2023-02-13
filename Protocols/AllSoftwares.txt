@@ -1,3 +1,7 @@
+## install anaconda
+## install mamba,  https://mamba.readthedocs.io/en/latest/installation.html
+
+
 #################################################################################################   
 ## 1_Pre-align  33+27
 
@@ -12,7 +16,7 @@ fastq-multx  2>&1 | grep Version  ## https://github.com/brwnj/fastq-multx
 fastq_screen    --version         ## https://github.com/StevenWingett/FastQ-Screen
 fastq-uniq      --version         ## https://github.com/dcjones/fastq-tools
 
-fastqc  --version
+fastqc  --version                 ## https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
 FASTQuick    2>&1  |  grep Version
 fastv  --version
 fastx_clipper  -h   | grep "0.0" ## fastx_toolkit
