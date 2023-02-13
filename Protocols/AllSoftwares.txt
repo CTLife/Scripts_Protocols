@@ -49,21 +49,22 @@ fastp   --version                   ## conda install -c bioconda fastp
 fastq-scan   -v                     ## conda install -c bioconda fastq-scan
 fastq_pre_barcodes                  ## conda install -c bioconda fastq_utils
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
-kmerdb                              ## pip install kmerdb , https://github.com/MatthewRalston/kmerdb
 prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
-kb -h
-cutadapt --version
-multiqc  --version
-fastools -v
-fastqp -h
-fqtools -version
-umi_tools  --version
-fastaq   version   ##pyfastaq
-pycoQC  --version
-cdna_classifier.py  -h  ## pychopper
-python -m fast2q -h ##
-pyfastx  --version
-python -m interop --test  ##import fastq as fq  ## python3
+fqtools -version                    ## conda install -c bioconda fqtools
+kmerdb                              ## pip install kmerdb , https://github.com/MatthewRalston/kmerdb
+kb -h                               ## pip install kb-python   ,  https://pypi.org/project/kb-python/
+cutadapt --version                  ## pip install cutadapt
+multiqc  --version                  ## pip install multiqc
+fastools -v                         ## pip install fastools
+fastqp -h                           ## pip install fastqp
+umi_tools  --version                ## pip install umi-tools
+fastaq   version                    ## pip install pyfastaq
+pycoQC  --version                   ## pip install pycoQC
+cdna_classifier.py  -h              ## conda install -c bioconda pychopper
+python -m fast2q -h                 ## pip install fast2q
+pyfastx  --version                  ## pip install pyfastx
+python -m interop --test            ## pip install interop  
+fastq -v                            ## pip install fastq , https://github.com/not-a-feature/fastq
 fastq-stat --help
 checkqc --version
 pheniqs  --version
