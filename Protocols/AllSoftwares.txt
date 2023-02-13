@@ -33,6 +33,13 @@ trim_galore   --version             ## https://github.com/FelixKrueger/TrimGalor
 trimmomatic.jar  -version           ## https://github.com/usadellab/Trimmomatic
 unikmer  version                    ## https://github.com/shenwei356/unikmer
 
+
+library( "ngsReports" )
+library( "seqTools" )
+library( "Rqc" )
+library( "systemPipeR" )
+library( "qrqc" )
+library( "ShortRead" )
 AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
 falco  --version                    ## conda install -c bioconda falco
 fastp   --version                   ## conda install -c bioconda fastp
@@ -42,13 +49,6 @@ fastq_pre_barcodes                  ## conda install -c bioconda fastq_utils
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
 kmerdb                              ## pip install kmerdb , https://github.com/MatthewRalston/kmerdb
 prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
-
-library( "ngsReports" )
-library( "seqTools" )
-library( "Rqc" )
-library( "systemPipeR" )
-library( "qrqc" )
-library( "ShortRead" )
 kb -h
 cutadapt --version
 multiqc  --version
