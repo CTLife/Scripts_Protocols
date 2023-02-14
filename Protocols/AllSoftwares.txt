@@ -65,14 +65,16 @@ python -m fast2q -h                 ## pip install fast2q
 pyfastx  --version                  ## pip install pyfastx
 python -m interop --test            ## pip install interop  
 fastq -v                            ## pip install fastq , https://github.com/not-a-feature/fastq
-fastq-stat --help
-checkqc --version
-pheniqs  --version
-fsplit  -h
-barcode_splitter   --version
-pod5-inspect  -h
-bonito basecaller
-remora  infer  -h
+fastq-dl                            ## pip install fastq-dl  , Download FASTQ files from the European Nucleotide Archive or the Sequence Read Archive repositories.
+fastq-stat --help                   ## pip install fastq-statistic
+checkqc  --version                  ## pip install checkqc
+pheniqs  --version                  ## conda install -c bioconda phenix ,  https://github.com/biosails/pheniqs
+fsplit  -h                          ## pip install fsplit3
+barcode_splitter   --version        ## pip install barcode-splitter
+barcode -h                          ## pip install barcode
+pod5-inspect  -h                    ## pip install pod5
+bonito basecaller                   ## pip install ont-bonito
+remora  infer  -h                   ## pip install ont-remora
 
 
 
