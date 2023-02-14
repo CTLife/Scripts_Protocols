@@ -51,6 +51,8 @@ fastq_pre_barcodes                  ## conda install -c bioconda fastq_utils
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
 prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
 fqtools -version                    ## conda install -c bioconda fqtools
+cdna_classifier.py  -h              ## conda install -c bioconda pychopper
+pheniqs  --version                  ## conda install -c bioconda phenix ,  https://github.com/biosails/pheniqs
 kmerdb                              ## pip install kmerdb , https://github.com/MatthewRalston/kmerdb
 kb -h                               ## pip install kb-python   ,  https://pypi.org/project/kb-python/
 cutadapt --version                  ## pip install cutadapt
@@ -60,7 +62,6 @@ fastqp -h                           ## pip install fastqp
 umi_tools  --version                ## pip install umi-tools
 fastaq   version                    ## pip install pyfastaq
 pycoQC  --version                   ## pip install pycoQC
-cdna_classifier.py  -h              ## conda install -c bioconda pychopper
 python -m fast2q -h                 ## pip install fast2q
 pyfastx  --version                  ## pip install pyfastx
 python -m interop --test            ## pip install interop  
@@ -68,7 +69,6 @@ fastq -v                            ## pip install fastq , https://github.com/no
 fastq-dl                            ## pip install fastq-dl  , Download FASTQ files from the European Nucleotide Archive or the Sequence Read Archive repositories.
 fastq-stat --help                   ## pip install fastq-statistic
 checkqc  --version                  ## pip install checkqc
-pheniqs  --version                  ## conda install -c bioconda phenix ,  https://github.com/biosails/pheniqs
 fsplit  -h                          ## pip install fsplit3
 barcode_splitter   --version        ## pip install barcode-splitter
 barcode -h                          ## pip install barcode
