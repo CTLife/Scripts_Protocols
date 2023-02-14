@@ -2,7 +2,7 @@
 apt-get download package_name  # replace `package_name` with the name of the package.
 dpkg -x package.deb dir
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/yongpeng/LocalFiles/usr/lib/x86_64-linux-gnu  ## when the dir is /home/yongpeng/LocalFiles
-exprot CPATH=$CPATH:/home/yongpeng/LocalFiles/usr/include
+export CPATH=$CPATH:/home/yongpeng/LocalFiles/usr/include
 
 ## HemTools: a collection of NGS pipelines and bioinformatic analyses
 ## https://hemtools.readthedocs.io/en/latest/
