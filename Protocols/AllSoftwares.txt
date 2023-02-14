@@ -5,10 +5,14 @@
 ## tar -xvzf xxx.tar.gz
 ## tar -xvf archive.tar.bz2
 
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
 conda update --all
 pip install pip-review
 pip-review --local --auto
 pip3 install --ignore-installed  xxx
+##  python3 setup.py install  --prefix /media/yp/1one/MyProgramFiles/3_BAM_QC/SAMstats
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh   ##install rustc
 rustc  --version
@@ -24,11 +28,21 @@ pip3 install   PePr   toolshed   RSeQC  bx-python  bx pybedtools  Pandas  Seabor
 pip3 install --upgrade  kb-python  cutadapt  multiqc  fastools  fastqp  umi_tools  pyfastaq    fast2q  ## pycoQC squidpy
 pip3 install -U loompy
 pip3 install pyfastx  biopython  fastq  miniFasta   fastq-statistic
+pip3 install midr  RSeQC  rnaseqc
+pip3 install interop  jcvi  mirtop  slamdunk
+pip3 install git+https://github.com/yodeng/fsplit.git
+pip3 install barcode_splitter  pod5_format  pod5_format_tools  ont-bonito  ont-remora
 
 conda    install -c bioconda fqtools  
 conda    install -c bioconda "hmmer>=3.0"
 conda    install -c bioconda "pychopper>=2.0"
 conda    install -c bioconda falco  mrsfast
+conda    install ngs-bits
+conda    install -c conda-forge -c bioconda busco=5.3.2  superstr
+conda    install -c bioconda checkqc  mirtrace  mirge3 pheniqs  alevin-fry 
+conda    install -c conda-forge -c bioconda nanoq=0.9.0
+conda    install -c bioconda bam2fastx  extracthifi isoseq3 lima minorseq pbaa pbccs pbbam pbcommand pbcopper  pbcore pbcoretools  pbgcpp pbipa  pblaa   pbmarkdup  pbmm2  pbpigeon pbskera pbsv   recalladapters zmwfilter      ## PacBio Secondary Analysis Tools on Bioconda: https://github.com/PacificBiosciences/pbbioconda 
+conda    install -c bioconda pbccs  pbmarkdup  ## https://ccs.how/
 
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 cpanm    Getopt::Long   Pod::Usage   File::Temp   Fcntl   Digest::MD5   Cwd   List::Util  JSON  Cairo  Statistics::PCA  MIME::Base64
@@ -37,40 +51,19 @@ cpanm    CGI   File::Path   IO::Uncompress::AnyUncompress   LWP::Simple   File::
 if (!require("BiocManager", quietly = TRUE)) {install.packages("BiocManager") }   
 BiocManager::install( c("ngsReports", "seqTools", "Rqc", "systemPipeR", "qrqc", "ShortRead" ) )
 BiocManager::install( "alpine" )
-
-conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
-conda install ngs-bits
-conda install -c conda-forge -c bioconda busco=5.3.2  superstr
- 
-cpanm  CGI   File::Path   IO::Uncompress::AnyUncompress   LWP::Simple   File::Copy   File::Basename
-sudo apt  install   libmaus2-2  libmaus2-dev
-##  python3 setup.py install  --prefix /media/yp/1one/MyProgramFiles/3_BAM_QC/SAMstats
-pip3 install midr  RSeQC  rnaseqc
-if (!require("BiocManager", quietly = TRUE)) {install.packages("BiocManager") }   
 BiocManager::install( c("BatchQC", "QuasR",   "scater", "DESeq2", "baySeq"  ) )
+BiocManager::install("exomePeak")  ## sudo R CMD INSTALL  exomePeak_2.16.0.tar.gz
 library(devtools)
 install_github("slzhao/MultiRankSeq")
 install_github("liuqivandy/scRNABatchQC")
 install.packages("spp", dependencies=TRUE) 
 devtools::install_github("skyhorsetomoon/Trumpet")
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("exomePeak")  ## sudo R CMD INSTALL  exomePeak_2.16.0.tar.gz
 install.packages("mashr")
-conda install -c bioconda checkqc  mirtrace  mirge3 pheniqs  alevin-fry
-pip install interop  jcvi  mirtop  slamdunk
-conda install -c conda-forge -c bioconda nanoq=0.9.0
-## PacBio Secondary Analysis Tools on Bioconda: https://github.com/PacificBiosciences/pbbioconda 
-conda install -c bioconda bam2fastx  extracthifi isoseq3 lima minorseq pbaa pbccs pbbam pbcommand pbcopper  pbcore pbcoretools  pbgcpp pbipa  pblaa   pbmarkdup  pbmm2  pbpigeon pbskera pbsv   recalladapters zmwfilter      
-conda install -c bioconda pbccs  pbmarkdup  ## https://ccs.how/
-pip install git+https://github.com/yodeng/fsplit.git
-pip install barcode_splitter  pod5_format  pod5_format_tools  ont-bonito  ont-remora
 
 
 
 
+ 
 
 
 #################################################################################################   
@@ -312,6 +305,11 @@ DeepVariant
 whatshap --version  ##WhatsHap is a software for phasing genomic variants using DNA sequencing reads, also called read-based phasing or haplotype assembly. 
 library(vcfR)
 library(mashr)
+
+
+
+
+
 
 
 
