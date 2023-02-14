@@ -5,17 +5,13 @@
 ## tar -xvzf xxx.tar.gz
 ## tar -xvf archive.tar.bz2
 
-
 conda update --all
 pip install pip-review
 pip-review --local --auto
 pip3 install --ignore-installed  xxx
 
-
-sudo apt install openjdk-11-jdk
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh   ##install rustc
 rustc  --version
-sudo apt install samblaster
 pip3 install    pyopenssl ndg-httpsclient   cython         six   pysam  numpy scipy matplotlib       nose  virtualenv   theano       multiqc   deeptools    macs3   htseq                                         
 pip3 install   --upgrade   cython   pytest progressbar2   tqdm  khmer   six  pysam  numpy   scipy  matplotlib     nose  virtualenv   theano    multiqc   deeptools    macs3   htseq
 pip3 install   pysam   coverage eta swalign  pyBigWig  bio_utils 
@@ -25,23 +21,22 @@ pip3 install   --upgrade   setuptools  pyparsing cython numpy  PyYAML alignlib-l
 pip3 install   --upgrade   ruffus  scipy  bx-python  sphinx  sphinxcontrib-programoutput  sqlalchemy  threadpool  web.py  weblogo  xlwt  pybedtools  pep8  CGATReport  cgat
 pip3 install   CrossMap    jellyfish  illuminate   mictools   fastqp   fastools  MultiQC  editdistance  pysam  coverage  eta   swalign   Atropos  cutadapt fastqp  fastools   kPAL 
 pip3 install   PePr   toolshed   RSeQC  bx-python  bx pybedtools  Pandas  Seaborn intervene rpy2   deeptools multiqc htseq
+pip3 install --upgrade  kb-python  cutadapt  multiqc  fastools  fastqp  umi_tools  pyfastaq    fast2q  ## pycoQC squidpy
+pip3 install -U loompy
+pip3 install pyfastx  biopython  fastq  miniFasta   fastq-statistic
 
-sudo apt install  libbam-dev  libhts-dev  libhts3  libseqlib-dev  libseqlib2  tabix  liblzma-dev  libcurl4  libcrypto++-dev  libcrypto++-utils libghc-zlib-dev
-sudo apt install  libsparsehash-dev  libsdsl-dev  libsdsl3
-sudo apt install genometools
 conda    install -c bioconda fqtools  
 conda    install -c bioconda "hmmer>=3.0"
 conda    install -c bioconda "pychopper>=2.0"
 conda    install -c bioconda falco  mrsfast
+
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 cpanm    Getopt::Long   Pod::Usage   File::Temp   Fcntl   Digest::MD5   Cwd   List::Util  JSON  Cairo  Statistics::PCA  MIME::Base64
 cpanm    CGI   File::Path   IO::Uncompress::AnyUncompress   LWP::Simple   File::Copy   File::Basename  Statistics::R  Text::Table Text::Levenshtein::XS
+
 if (!require("BiocManager", quietly = TRUE)) {install.packages("BiocManager") }   
 BiocManager::install( c("ngsReports", "seqTools", "Rqc", "systemPipeR", "qrqc", "ShortRead" ) )
 BiocManager::install( "alpine" )
-pip3 install --upgrade  kb-python  cutadapt  multiqc  fastools  fastqp  umi_tools  pyfastaq    fast2q  ## pycoQC squidpy
-pip3 install -U loompy
-pip3 install pyfastx  biopython  fastq  miniFasta   fastq-statistic
 
 conda config --add channels defaults
 conda config --add channels conda-forge
