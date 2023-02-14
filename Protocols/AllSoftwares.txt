@@ -8,7 +8,7 @@
 
 
 #################################################################################################   
-## 1_Pre-align  26+38
+## 1_Pre-align  28+38
 barcode_split_trim.pl  --version    ## https://github.com/mfcovington/auto_barcode
 biobloommaker    --version          ## https://github.com/bcgsc/biobloom
 bustools | grep bustools            ## https://github.com/BUStools/bustools
@@ -19,6 +19,7 @@ fasten_regex  --version             ## https://github.com/lskatz/fasten
 fastq-multx  2>&1 | grep Version    ## https://github.com/brwnj/fastq-multx
 fastq_screen    --version           ## https://github.com/StevenWingett/FastQ-Screen
 fastq-uniq      --version           ## https://github.com/dcjones/fastq-tools
+fastq_pre_barcodes                  ## https://github.com/nunofonseca/fastq_utils
 fastqc  --version                   ## https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
 FASTQuick    2>&1  |  grep Version  ## https://github.com/Griffan/FASTQuick
 fastv  --version                    ## https://github.com/OpenGene/fastv
@@ -26,6 +27,7 @@ fastx_clipper  -h   | grep "0.0"    ## https://github.com/agordon/fastx_toolkit
 kmc   | grep "ver. "                ## https://github.com/refresh-bio/KMC
 MinIONQC.R  -h                      ## https://github.com/roblanf/minion_qc
 mutscan   --help                    ## https://github.com/OpenGene/MutScan
+ngsutilsj -v                        ## https://github.com/compgen-io/ngsutilsj
 prinseq-lite.pl  --version          ## https://prinseq.sourceforge.net/
 qc3.pl  -h  2>&1  | grep Version    ## https://github.com/slzhao/QC3
 seqkit   version                    ## https://github.com/shenwei356/seqkit
@@ -47,7 +49,7 @@ AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
 falco  --version                    ## conda install -c bioconda falco
 fastp   --version                   ## conda install -c bioconda fastp
 fastq-scan   -v                     ## conda install -c bioconda fastq-scan
-fastq_pre_barcodes                  ## conda install -c bioconda fastq_utils
+
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
 prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
 fqtools -version                    ## conda install -c bioconda fqtools
