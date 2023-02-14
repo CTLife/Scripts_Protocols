@@ -8,7 +8,7 @@
 
 
 #################################################################################################   
-## 1_Pre-align  26+34
+## 1_Pre-align  26+38
 barcode_split_trim.pl  --version    ## https://github.com/mfcovington/auto_barcode
 biobloommaker    --version          ## https://github.com/bcgsc/biobloom
 bustools | grep bustools            ## https://github.com/BUStools/bustools
