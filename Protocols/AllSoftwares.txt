@@ -49,7 +49,6 @@ AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
 falco  --version                    ## conda install -c bioconda falco
 fastp   --version                   ## conda install -c bioconda fastp
 fastq-scan   -v                     ## conda install -c bioconda fastq-scan
-
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
 prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
 fqtools -version                    ## conda install -c bioconda fqtools
@@ -77,7 +76,7 @@ barcode -h                          ## pip install barcode
 pod5-inspect  -h                    ## pip install pod5
 bonito basecaller                   ## pip install ont-bonito
 remora  infer  -h                   ## pip install ont-remora
-
+fasta                               ## pip install fasta
 
 
 
