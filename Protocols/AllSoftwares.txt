@@ -58,7 +58,7 @@ if (!require("BiocManager", quietly = TRUE)) {install.packages("BiocManager") }
 BiocManager::install( c("ngsReports", "seqTools", "Rqc", "systemPipeR", "qrqc", "ShortRead" ) )
 BiocManager::install( "alpine" )
 BiocManager::install( c("BatchQC", "QuasR",   "scater", "DESeq2", "baySeq"  ) )
-BiocManager::install("exomePeak")  ## sudo R CMD INSTALL  exomePeak_2.16.0.tar.gz
+BiocManager::install("exomePeak2")  ## sudo R CMD INSTALL  exomePeak_2.16.0.tar.gz
 library(devtools)
 install_github("slzhao/MultiRankSeq")
 install_github("liuqivandy/scRNABatchQC")
