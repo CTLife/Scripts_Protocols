@@ -60,9 +60,9 @@ BiocManager::install( "alpine" )
 BiocManager::install( c("BatchQC", "QuasR",   "scater", "DESeq2", "baySeq"  ) )
 BiocManager::install("exomePeak2")  ## sudo R CMD INSTALL  exomePeak_2.16.0.tar.gz
 library(devtools)
-install_github("slzhao/MultiRankSeq")
-install_github("liuqivandy/scRNABatchQC")
-install.packages("spp", dependencies=TRUE) 
+devtools::install_github("slzhao/MultiRankSeq")
+devtools::install_github("liuqivandy/scRNABatchQC")
+devtools::install_github('hms-dbmi/spp', build_vignettes = FALSE)
 devtools::install_github("skyhorsetomoon/Trumpet")
 install.packages("mashr")
 
