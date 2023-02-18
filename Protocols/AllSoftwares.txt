@@ -144,6 +144,8 @@ remora  infer  -h                   ## pip install ont-remora
 fasta                               ## pip install fasta
 SeqPrep                             ## conda install -c bioconda seqprep ,  https://anaconda.org/bioconda/seqprep/files
 pycoQC                              ## pip install pycoQC , https://github.com/a-slide/pycoQC
+nanoq                               ## conda install -c conda-forge -c bioconda nanoq.=0.9.0 ,  https://github.com/esteinig/nanoq
+
 
 
 ## git clone --recursive  https://github.com/smithlabcode/abismal.git
