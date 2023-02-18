@@ -151,21 +151,21 @@ fasta                               ## pip install fasta
 ## Bismark, , , ,     
 #################################################################################################   
 ## 2_Aligners  30+5
-abismal  -about  ## two-letter alphabet
-Arioc
-bbmap.sh  --version
-biscuit  version
-bismark  --version
-bowtie   --version
-bowtie2  --version
-BSBlot      ## BSBlot
-BSMAP       ## https://anaconda.org/bioconda/bsmap/files
-bwa
-bwa-mem2.avx512bw   version  ##  bwa-mem2.avx2  mem
-BWA-meth   ## BWA-meth
-DNMTools      ## DNMTools
-gem-mapper   --version
-gmap --version  ## gsnap  --version
+abismal  -about         ## https://github.com/smithlabcode/abismal  , two-letter alphabet
+Arioc                   ## https://github.com/RWilton/Arioc
+bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
+biscuit  version        ## https://github.com/zhou-lab/biscuit
+bismark  --version      ## https://github.com/FelixKrueger/Bismark
+bowtie   --version      ## https://github.com/BenLangmead/bowtie
+bowtie2  --version      ## https://github.com/BenLangmead/bowtie2
+BSBlot                  ## https://github.com/NuttyLogic/BSBolt
+BSMAP                   ## https://anaconda.org/bioconda/bsmap/files , conda install -c bioconda bsmap
+bwa                     ## https://github.com/lh3/bwa
+bwa-mem2.avx512bw   version  ##  https://github.com/bwa-mem2/bwa-mem2
+BWA-meth               ## https://github.com/brentp/bwa-meth
+DNMTools               ## https://github.com/smithlabcode/dnmtools
+gem-mapper  --version  ## https://anaconda.org/bioconda/gem3-mapper/files , conda install -c bioconda gem3-mapper
+gmap --version         ## http://research-pub.gene.com/gmap/
 graphmap
 hicup   --version
 hisat2  --version   ## hisat-3n  --version  , hisat2_extract_snps_haplotypes_VCF.py   -h
