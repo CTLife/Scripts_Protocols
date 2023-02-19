@@ -250,6 +250,7 @@ mirtrace  -v
 slamdunk  --version 
 deeptools  --version 
 
+SampleQC  ## https://github.com/wmacnair/SampleQC
 
 
 
