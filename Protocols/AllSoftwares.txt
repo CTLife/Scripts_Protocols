@@ -111,7 +111,7 @@ library( "systemPipeR" )            ## BiocManager::install("systemPipeR")
 library( "qrqc" )                   ## BiocManager::install("qrqc")
 library( "ShortRead" )              ## BiocManager::install("ShortRead")
 AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
-falco  --version                    ## conda install -c bioconda falco
+falco  --version                    ## conda install -c bioconda falco , https://github.com/smithlabcode/falco
 fastp   --version                   ## conda install -c bioconda fastp
 fastq-scan   -v                     ## conda install -c bioconda fastq-scan
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
