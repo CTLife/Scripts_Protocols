@@ -105,8 +105,8 @@ seqkit                   version    ## https://github.com/shenwei356/seqkit
 seqtk   2>&1 | grep Version         ## https://github.com/lh3/seqtk
 seqyclean  -h  | grep "Version"     ## https://github.com/ibest/seqyclean
 fastq-dump            --version     ## https://github.com/ncbi/sra-tools
-tagdust                             ## https://tagdust.sourceforge.net/
-trim_galore          --version      ## https://github.com/FelixKrueger/TrimGalore
+tagdust               -v            ## https://tagdust.sourceforge.net/
+trim_galore           --version     ## https://github.com/FelixKrueger/TrimGalore
 trimmomatic.jar       -version      ## https://github.com/usadellab/Trimmomatic
 unikmer  version                    ## https://github.com/shenwei356/unikmer
 
