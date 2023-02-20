@@ -85,11 +85,11 @@ FaQCs                  --version    ## https://github.com/chienchi/FaQCs
 fasten_regex           --version    ## https://github.com/lskatz/fasten
 fastp                  --version    ## https://github.com/OpenGene/fastp
 fastq-multx  2>&1 | grep Version    ## https://github.com/brwnj/fastq-multx
-fastq-scan             -v           ## https://github.com/rpetit3/fastq-scan
+fastq-scan                    -v    ## https://github.com/rpetit3/fastq-scan
 fastq_screen           --version    ## https://github.com/StevenWingett/FastQ-Screen
 fastq-uniq             --version    ## https://github.com/dcjones/fastq-tools
 fastq_pre_barcodes                  ## https://github.com/nunofonseca/fastq_utils
-fastqc  --version                   ## https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
+fastqc                 --version    ## https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
 FASTQuick  2>&1  |  grep Version    ## https://github.com/Griffan/FASTQuick
 fastv                  --version    ## https://github.com/OpenGene/fastv
 fastx_clipper  -h   | grep "0.0"    ## https://github.com/agordon/fastx_toolkit
@@ -100,15 +100,15 @@ mutscan   --help                    ## https://github.com/OpenGene/MutScan
 ngsutilsj               version     ## https://github.com/compgen-io/ngsutilsj
 prinseq-lite.pl       --version     ## https://prinseq.sourceforge.net/
 prinseq++             --version     ## https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
-qc3.pl  -h  2>&1  | grep Version    ## https://github.com/slzhao/QC3
-seqkit                   version    ## https://github.com/shenwei356/seqkit
-seqtk   2>&1 | grep Version         ## https://github.com/lh3/seqtk
+qc3.pl  -h  2>&1 | grep Version     ## https://github.com/slzhao/QC3
+seqkit                  version     ## https://github.com/shenwei356/seqkit
+seqtk   2>&1    |  grep Version     ## https://github.com/lh3/seqtk
 seqyclean  -h  | grep "Version"     ## https://github.com/ibest/seqyclean
 fastq-dump            --version     ## https://github.com/ncbi/sra-tools
 tagdust               -v            ## https://tagdust.sourceforge.net/
 trim_galore           --version     ## https://github.com/FelixKrueger/TrimGalore
-trimmomatic.jar       -version      ## https://github.com/usadellab/Trimmomatic
-unikmer  version                    ## https://github.com/shenwei356/unikmer
+trimmomatic.jar        -version     ## https://github.com/usadellab/Trimmomatic
+unikmer                 version     ## https://github.com/shenwei356/unikmer
 
 ## if (!require("BiocManager", quietly = TRUE)) { install.packages("BiocManager") }
 library( "ngsReports" )             ## BiocManager::install("ngsReports")
