@@ -117,9 +117,6 @@ library( "Rqc" )                    ## BiocManager::install("Rqc")
 library( "systemPipeR" )            ## BiocManager::install("systemPipeR")
 library( "qrqc" )                   ## BiocManager::install("qrqc")
 library( "ShortRead" )              ## BiocManager::install("ShortRead")
-fastq-scan   -v                     ## conda install -c bioconda fastq-scan
-kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
-prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
 fqtools -version                    ## conda install -c bioconda fqtools
 cdna_classifier.py  -h              ## conda install -c bioconda pychopper
 pheniqs  --version                  ## conda install -c bioconda phenix ,  https://github.com/biosails/pheniqs
