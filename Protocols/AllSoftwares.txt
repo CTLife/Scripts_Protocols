@@ -73,7 +73,7 @@ install.packages("mashr")
 
 
 #################################################################################################   
-## 1_Pre-align  28+38
+## 1_Pre-align  35+35
 adapterremoval3        --version    ## https://github.com/MikkelSchubert/adapterremoval
 barcode_split_trim.pl  --version    ## https://github.com/mfcovington/auto_barcode
 biobloommaker          --version    ## https://github.com/bcgsc/biobloom
@@ -117,9 +117,6 @@ library( "Rqc" )                    ## BiocManager::install("Rqc")
 library( "systemPipeR" )            ## BiocManager::install("systemPipeR")
 library( "qrqc" )                   ## BiocManager::install("qrqc")
 library( "ShortRead" )              ## BiocManager::install("ShortRead")
-AdapterRemoval   --version          ## conda install -c bioconda adapterremoval
-falco  --version                    ## conda install -c bioconda falco , https://github.com/smithlabcode/falco
-fastp   --version                   ## conda install -c bioconda fastp
 fastq-scan   -v                     ## conda install -c bioconda fastq-scan
 kmer-db | grep "version"            ## conda install -c bioconda kmer-db , https://github.com/refresh-bio/kmer-db
 prinseq++   --version               ## conda install -c conda-forge -c bioconda prinseq-plus-plus
