@@ -151,43 +151,59 @@ nanoq    --version                  ## conda install -c conda-forge -c bioconda 
 
 ## git clone --recursive  https://github.com/smithlabcode/abismal.git
 ## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
-## Bismark, , , ,     
+## python setup.py install --user --prefix=    
 #################################################################################################   
-## 2_Aligners  30+5
-abismal  -about         ## https://github.com/smithlabcode/abismal  , two-letter alphabet
+## 2_Aligners  35
 Arioc                   ## https://github.com/RWilton/Arioc
 bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
-biscuit  version        ## https://github.com/zhou-lab/biscuit
+bwa                     ## https://github.com/lh3/bwa
 bismark  --version      ## https://github.com/FelixKrueger/Bismark
+hicup   --version       ## https://github.com/StevenWingett/HiCUP
+rsem-calculate-expression  --version
+SNPsplit  --version     ## https://github.com/FelixKrueger/SNPsplit
+STAR  --version         ## https://github.com/alexdobin/STAR
+uncalled                ## https://github.com/skovaka/UNCALLED
+snp2h5                  ## https://github.com/bmvdgeijn/WASP
+winnowmap  --version    ## https://github.com/marbl/Winnowmap
+abismal  -about         ## https://github.com/smithlabcode/abismal  , two-letter alphabet
+
+
+
+
+biscuit  version        ## https://github.com/zhou-lab/biscuit
+
+
+
+
 bowtie   --version      ## https://github.com/BenLangmead/bowtie
 bowtie2  --version      ## https://github.com/BenLangmead/bowtie2
 BSBlot                  ## https://github.com/NuttyLogic/BSBolt
 BSMAP                   ## https://anaconda.org/bioconda/bsmap/files , conda install -c bioconda bsmap
-bwa                     ## https://github.com/lh3/bwa
+
 bwa-mem2.avx512bw   version  ##  https://github.com/bwa-mem2/bwa-mem2
 BWA-meth               ## https://github.com/brentp/bwa-meth
 DNMTools               ## https://github.com/smithlabcode/dnmtools
 gem-mapper  --version  ## https://anaconda.org/bioconda/gem3-mapper/files , conda install -c bioconda gem3-mapper
 gmap --version         ## http://research-pub.gene.com/gmap/
 graphmap
-hicup   --version
+
 hisat2  --version   ## hisat-3n  --version  , hisat2_extract_snps_haplotypes_VCF.py   -h
 kallisto  version
 lastal  --version  ##Last.
 minigraph  --version
 minimap2  --version
 test-mwf  ## miniwfa
-rsem-calculate-expression  --version
+
 salmon   --version  ## conda install -c bioconda salmon,   which generateDecoyTranscriptome.sh
 ## seqan3
 snap-aligner  2>&1  | grep version
-SNPsplit  --version
-STAR  --version
+
+
 subread-align  -v ## featureCounts  -v , subread-fullscan
-## UNCALLED
-snp2h5  ## WASP
+ 
+
 align_benchmark  -h  ##WFA
-winnowmap  --version
+
 
 library( "alpine" )
 mrsfast      --version
