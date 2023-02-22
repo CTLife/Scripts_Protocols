@@ -170,33 +170,32 @@ bowtie   --version      ## https://github.com/BenLangmead/bowtie
 bowtie2  --version      ## https://github.com/BenLangmead/bowtie2
 python3 -m bsbolt       ## https://github.com/NuttyLogic/BSBolt
 bsmap -h                ## https://anaconda.org/bioconda/bsmap/files , conda install -c bioconda bsmap
-bwa-mem2   version      ##  https://github.com/bwa-mem2/bwa-mem2
+bwa-mem2   version      ## https://github.com/bwa-mem2/bwa-mem2
 bwameth.py              ## https://github.com/brentp/bwa-meth
-gmap --version          ## http://research-pub.gene.com/gmap/
-graphmap
+gmap --version          ## http://research-pub.gene.com/gmap/    ,  gsnap --version
+graphmap                ## https://github.com/lbcb-sci/graphmap2
+hisat2  --version       ## https://github.com/DaehwanKimLab/hisat2 ， hisat-3n  --version  , hisat2_extract_snps_haplotypes_VCF.py   -h
+kallisto  version       ## https://github.com/pachterlab/kallisto
+lastal  --version       ## https://gitlab.com/mcfrith/last
+minigraph  --version    ## https://github.com/lh3/minigraph
+minimap2  --version     ## https://github.com/lh3/minimap2
+test-mwf                ## https://github.com/lh3/miniwfa
+blastn  -version        ## https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/  ,  blastx -version, blastp -version
+magicblast  -version    ## https://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/
+novoalign --version     ## https://www.novocraft.com/support/download/
+salmon   --version      ## conda install -c bioconda salmon,   which generateDecoyTranscriptome.sh
+strobealign --version   ## https://github.com/ksahlin/strobealign
+StrobeMap               ## https://github.com/ksahlin/strobemers
+subread-align  -v       ## https://subread.sourceforge.net/ , featureCounts  -v , subread-fullscan
+uLTRA  --version        ## https://github.com/ksahlin/ultra
+snap-aligner  2>&1  | grep version              ## https://github.com/amplab/snap
 
-hisat2  --version   ## hisat-3n  --version  , hisat2_extract_snps_haplotypes_VCF.py   -h
-kallisto  version
-lastal  --version  ##Last.
-minigraph  --version
-minimap2  --version
-test-mwf  ## miniwfa
-
-salmon   --version  ## conda install -c bioconda salmon,   which generateDecoyTranscriptome.sh
-## seqan3
-snap-aligner  2>&1  | grep version
-
-
-subread-align  -v ## featureCounts  -v , subread-fullscan
- 
-
-align_benchmark  -h  ##WFA
 
 
 library( "alpine" )
 mrsfast      --version
 alevin-fry   --version  ##  framework for single-cell analysis
-mirge3  #  miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
+mirge3                  #  miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
 superstr    --help   ## A lightweight, alignment-free utility for detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
 
  
