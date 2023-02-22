@@ -158,7 +158,7 @@ bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
 bwa                     ## https://github.com/lh3/bwa
 bismark   --version     ## https://github.com/FelixKrueger/Bismark
 hicup     --version     ## https://github.com/StevenWingett/HiCUP
-rsem-ce   --version     ##  https://github.com/deweylab/RSEM
+rsem-ce   --version     ##  https://github.com/deweylab/RSEM  ,  rsem-calculate-expression
 SNPsplit  --version     ## https://github.com/FelixKrueger/SNPsplit
 STAR      --version     ## https://github.com/alexdobin/STAR
 uncalled                ## https://github.com/skovaka/UNCALLED,  xxx
