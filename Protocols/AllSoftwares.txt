@@ -168,7 +168,6 @@ abismal  -about         ## https://github.com/smithlabcode/abismal  , two-letter
 biscuit  version        ## https://github.com/huishenlab/biscuit
 bowtie   --version      ## https://github.com/BenLangmead/bowtie
 bowtie2  --version      ## https://github.com/BenLangmead/bowtie2
-python3 -m bsbolt       ## https://github.com/NuttyLogic/BSBolt
 bsmap -h                ## https://anaconda.org/bioconda/bsmap/files , conda install -c bioconda bsmap
 bwa-mem2   version      ## https://github.com/bwa-mem2/bwa-mem2
 bwameth.py              ## https://github.com/brentp/bwa-meth
@@ -190,13 +189,12 @@ subread-align  -v       ## https://subread.sourceforge.net/ , featureCounts  -v 
 uLTRA  --version        ## https://github.com/ksahlin/ultra
 snap-aligner  2>&1  | grep version              ## https://github.com/amplab/snap
 
-
 library( "alpine" )      ## https://bioconductor.org/packages/release/bioc/html/alpine.html
 mrsfast      --version   ## https://anaconda.org/bioconda/mrsfast
 alevin-fry   --version   ## https://github.com/COMBINE-lab/alevin-fry ,  framework for single-cell analysis
 mirge3                   ## https://github.com/mhalushka/miRge3.0  , miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
 superstr    --help       ## A lightweight, alignment-free utility for detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
-
+bsbolt  -h               ## https://github.com/NuttyLogic/BSBolt
  
 
 
