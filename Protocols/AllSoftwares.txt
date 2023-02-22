@@ -10,6 +10,7 @@ export CPATH=$CPATH:/home/yongpeng/LocalFiles/usr/include
 ## unzip zipped_file.zip
 ## tar -xvzf xxx.tar.gz
 ## tar -xvf archive.tar.bz2
+## gzip -dk file.gz
 
 conda config --add channels defaults
 conda config --add channels conda-forge
