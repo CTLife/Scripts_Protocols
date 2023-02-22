@@ -152,7 +152,7 @@ nanoq    --version                  ## conda install -c conda-forge -c bioconda 
 ## git clone --recursive  https://github.com/smithlabcode/abismal.git
 ## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
 #################################################################################################   
-## 2_Aligners  35
+## 2_Aligners  35+6
 Arioc                   ## https://github.com/RWilton/Arioc
 bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
 bwa                     ## https://github.com/lh3/bwa
@@ -191,12 +191,11 @@ uLTRA  --version        ## https://github.com/ksahlin/ultra
 snap-aligner  2>&1  | grep version              ## https://github.com/amplab/snap
 
 
-
-library( "alpine" )
-mrsfast      --version
-alevin-fry   --version  ##  framework for single-cell analysis
-mirge3                  #  miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
-superstr    --help   ## A lightweight, alignment-free utility for detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
+library( "alpine" )      ## https://bioconductor.org/packages/release/bioc/html/alpine.html
+mrsfast      --version   ## https://anaconda.org/bioconda/mrsfast
+alevin-fry   --version   ## https://github.com/COMBINE-lab/alevin-fry ,  framework for single-cell analysis
+mirge3                   ## https://github.com/mhalushka/miRge3.0  , miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
+superstr    --help       ## A lightweight, alignment-free utility for detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
 
  
 
