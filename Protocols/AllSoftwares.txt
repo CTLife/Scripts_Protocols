@@ -153,7 +153,7 @@ nanoq    --version                  ## conda install -c conda-forge -c bioconda 
 ## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
 #################################################################################################   
 ## 2_Aligners  35+6
-Arioc                   ## https://github.com/RWilton/Arioc     xxx
+AriocE  AriocP AriocU   ## https://github.com/RWilton/Arioc     xxx
 bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
 bwa                     ## https://github.com/lh3/bwa
 bismark  --version      ## https://github.com/FelixKrueger/Bismark
