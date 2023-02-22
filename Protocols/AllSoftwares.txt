@@ -133,7 +133,7 @@ python -m fast2q -h                 ## pip install fast2q
 pyfastx  --version                  ## pip install pyfastx
 python -m interop --test            ## pip install interop  
 import  fastq                       ## pip install fastq , https://github.com/not-a-feature/fastq
-fastq-dl      --version             ## pip install fastq-dl  , Download FASTQ files from the European Nucleotide Archive or the Sequence Read Archive repositories.
+fastq-dl      --version             ## pip install fastq-dl  , Download FASTQ files from the European Nucleotide Archive or the GEO.
 fastq-stat --help                   ## pip install fastq-statistic
 checkqc  --version                  ## pip install checkqc
 fsplit  -v                          ## pip install fsplit3
@@ -153,7 +153,7 @@ nanoq    --version                  ## conda install -c conda-forge -c bioconda 
 ## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
 #################################################################################################   
 ## 2_Aligners  35+6
-AriocE  AriocP AriocU   ## https://github.com/RWilton/Arioc     xxx
+AriocE  AriocP AriocU   ## https://github.com/RWilton/Arioc      
 bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
 bwa                     ## https://github.com/lh3/bwa
 bismark  --version      ## https://github.com/FelixKrueger/Bismark
