@@ -192,7 +192,7 @@ snap-aligner  2>&1  | grep version              ## https://github.com/amplab/sna
 library( "alpine" )      ## https://bioconductor.org/packages/release/bioc/html/alpine.html
 mrsfast      --version   ## https://anaconda.org/bioconda/mrsfast
 alevin-fry   --version   ## https://github.com/COMBINE-lab/alevin-fry ,  framework for single-cell analysis
-mirge3                   ## https://github.com/mhalushka/miRge3.0  , miRge3.0 -h   ## microRNA alignment software for small RNA-seq data
+mirge3                   ## https://github.com/mhalushka/miRge3.0  , pip install mirge3,   microRNA alignment software for small RNA-seq data
 superstr    --help       ## A lightweight, alignment-free utility for detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
 bsbolt  -h               ## https://github.com/NuttyLogic/BSBolt
  
