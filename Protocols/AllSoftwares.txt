@@ -206,19 +206,22 @@ bsbolt  -h               ## https://github.com/NuttyLogic/BSBolt
 
 
 #################################################################################################
-##  3_BAM_QC  26+17
-run_bam_qc.py  --version
-bamstats   --version
-bamtools   --version
-bam help |  grep Version  ## bamUtil
-bcftools  -v
-bamcollate2  --version  ## biobambam2
-busco  -v  ## which busco 
-which chase.jar
-which fgbio.jar
-goleft -v
-tabix 2>&1  | grep Version
-# iSeqQC_shinyapp
+##  3_BAM_QC  30+17
+run_bam_qc.py  --version     ## https://github.com/oicr-gsi/bam-qc-metrics
+bamstats       --version     ## https://github.com/guigolab/bamstats
+bamtools       --version     ## https://github.com/pezmaster31/bamtools
+bam help |  grep Version     ## https://github.com/statgen/bamUtil
+bcftools  -v                 ## https://github.com/samtools/bcftools
+bamcollate2  --version       ## https://gitlab.com/german.tischler/biobambam2
+busco  -v                    ## https://gitlab.com/ezlab/busco
+which chase.jar              ## https://github.com/hyounesy/ChAsE
+dnmtools  | grep "Version"   ## https://github.com/smithlabcode/dnmtools
+which fgbio.jar              ## https://github.com/fulcrumgenomics/fgbio
+gemBS    --version           ## https://github.com/heathsc/gemBS
+goleft   -v                  ## https://github.com/brentp/goleft
+tabix 2>&1  | grep Version   ## https://github.com/samtools/htslib
+iSeqQC_shinyapp              ## https://github.com/gkumar09/iSeqQC
+methylQA                     ## https://github.com/lidaof/methylQA
 mosdepth   --version
 which cal_mrin.R
 which run_spp.R
@@ -253,7 +256,7 @@ slamdunk  --version
 deeptools  --version 
 
 SampleQC  ## https://github.com/wmacnair/SampleQC
-
+https://github.com/xie186/ViewBS
 
 
 
