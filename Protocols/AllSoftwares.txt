@@ -205,6 +205,7 @@ bsbolt  -h               ## https://github.com/NuttyLogic/BSBolt
 
 
 
+
 #################################################################################################
 ##  3_BAM_QC  30+17
 alfred                       ## https://github.com/tobiasrausch/alfred
@@ -222,7 +223,6 @@ gemBS    --version           ## https://github.com/heathsc/gemBS
 goleft   -v                  ## https://github.com/brentp/goleft
 tabix 2>&1  | grep Version   ## https://github.com/samtools/htslib
 iSeqQC_shinyapp              ## https://github.com/gkumar09/iSeqQC
-methylQA                     ## https://github.com/lidaof/methylQA
 mosdepth   --version         ## https://github.com/brentp/mosdepth
 which cal_mrin.R             ## https://github.com/chaolinzhanglab/mrin
 which run_spp.R              ## https://github.com/kundajelab/phantompeakqualtools
