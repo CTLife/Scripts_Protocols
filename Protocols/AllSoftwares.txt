@@ -207,6 +207,7 @@ bsbolt  -h               ## https://github.com/NuttyLogic/BSBolt
 
 #################################################################################################
 ##  3_BAM_QC  30+17
+alfred                       ## https://github.com/tobiasrausch/alfred
 run_bam_qc.py  --version     ## https://github.com/oicr-gsi/bam-qc-metrics
 bamstats       --version     ## https://github.com/guigolab/bamstats
 bamtools       --version     ## https://github.com/pezmaster31/bamtools
@@ -222,20 +223,21 @@ goleft   -v                  ## https://github.com/brentp/goleft
 tabix 2>&1  | grep Version   ## https://github.com/samtools/htslib
 iSeqQC_shinyapp              ## https://github.com/gkumar09/iSeqQC
 methylQA                     ## https://github.com/lidaof/methylQA
-mosdepth   --version
-which cal_mrin.R
-which run_spp.R
-which picard.jar
-preseq
-which QoRTs.jar
-qualimap   -v
-quast.py  --version
-RQC-parallel-qc  -h
-rnaseqc --version
-sambamba   --version
-samstat   --version
-which SAMstats
-samtools version
+mosdepth   --version         ## https://github.com/brentp/mosdepth
+which cal_mrin.R             ## https://github.com/chaolinzhanglab/mrin
+which run_spp.R              ## https://github.com/kundajelab/phantompeakqualtools
+which picard.jar             ## https://github.com/broadinstitute/picard
+preseq                       ## https://github.com/smithlabcode/preseq
+which QoRTs.jar              ## https://github.com/hartleys/QoRTs
+qualimap   -v                ## http://qualimap.conesalab.org/
+quast.py  --version          ## https://github.com/ablab/quast
+RQC-parallel-qc  -h          ## http://bioinfo.single-cell.cn/rna-qc-chain.html
+rnaseqc --version            ## https://github.com/getzlab/rnaseqc
+sambamba   --version         ## https://github.com/biod/sambamba
+samstat   --version          ## https://github.com/TimoLassmann/samstat
+which SAMstats               ## https://github.com/kundajelab/SAMstats
+samtools version             ## https://github.com/samtools/samtools
+VerifyBamID  --help          ## https://github.com/Griffan/VerifyBamID
 
 IDR ## (IDRfilter in R package ChIPpeakAnno)
 library( BatchQC )
