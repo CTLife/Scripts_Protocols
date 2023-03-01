@@ -153,7 +153,7 @@ nanoq    --version                  ## conda install -c conda-forge -c bioconda 
 ## git clone --recursive  https://github.com/smithlabcode/abismal.git
 ## if your intent is to clone-only a repo, use HTTPS URL (https://github.com/{user_name}/{project_name}.git) instead of SSH URL (git@github.com:{user_name}/{project_name}.git), which avoids (unnecessary) public key validation.
 #################################################################################################   
-## 2_Aligners  35+6
+## 2_Aligners  35+7
 AriocE  AriocP AriocU   ## https://github.com/RWilton/Arioc      
 bbmap.sh  --version     ## https://sourceforge.net/projects/bbmap/files/
 bwa                     ## https://github.com/lh3/bwa
@@ -196,7 +196,7 @@ alevin-fry   --version   ## https://github.com/COMBINE-lab/alevin-fry ,  framewo
 miRge3.0   --version     ## https://github.com/mhalushka/miRge3.0  ,  microRNA alignment software for small RNA-seq data
 superstr    --help       ## https://github.com/bahlolab/superSTR  ,  detecting repeat-containing reads in short-read WGS, WES and RNA-seq data.
 bsbolt  -h               ## https://github.com/NuttyLogic/BSBolt
- 
+how_are_we_stranded_here ## https://github.com/signalbash/how_are_we_stranded_here 
 
 
 
