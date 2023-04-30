@@ -424,7 +424,7 @@ bedCoverage  # UCSC_Utilities
 macs2 --version
 macs3 --version
 library(MAnorm2)
-
+bedparse  --version
 
 
 
