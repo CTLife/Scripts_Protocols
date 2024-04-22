@@ -1,0 +1,693 @@
+#! /usr/bin/env Rscript
+##############################################################################################################################################################################################
+## PipiDABS: A Comprehensive and User-Friendly Pipeline for Downstream DNA Methylation Analysis of High-throughput Bisulfite Sequencing Data.                           
+## Run "PipiDABS -h" to get some help.
+## Author: Yong Peng, yongp@outlook.com
+##############################################################################################################################################################################################
+
+
+
+
+
+## Part 1: Get arguments, system informations, versions of packages, etc ...
+##############################################################################################################################################################################################
+rm( list=ls() )    # Remove all the objects from the R session
+PathOfPipiDABS_g          = system(command = "which PipiDABS",  intern = TRUE) 
+PathOfPipiDABS_g          = gsub(pattern="/PipiDABS$", replacement="", x=PathOfPipiDABS_g, ignore.case = FALSE, perl = TRUE)                                              
+AbsolutePathOfFunctions_g = paste(PathOfPipiDABS_g, "functions", sep="/")
+source( paste(AbsolutePathOfFunctions_g,   "1_Get-Parameters.R",    sep="/") )  
+
+Part1_g = paste(OutDir_g, "1_Get-Options-Versions",   sep="/"  ) 
+if( ! file.exists(OutDir_g)   ) { dir.create(OutDir_g,   recursive = TRUE) }
+if( ! file.exists(Part1_g)    ) { dir.create(Part1_g,    recursive = TRUE) }
+
+cat("\nStart Part 1: \n")
+cat("    Get arguments, system informations, versions of packages, etc ... \n")
+
+sink(file = paste(Part1_g, "Part_1.runLog.txt", sep="/") )
+source( paste(AbsolutePathOfFunctions_g,   "2_Load-All-Packages.R",   sep="/") )   
+cat("\n All required packages are loaded correctly. \n")
+sink( paste(Part1_g,  "/1_Parameters.txt",  sep = "") )
+    print( paste("SamplesInformation_g"      , SamplesInformation_g,      sep=":  ") )
+    print( paste("OutDir_g"                  , OutDir_g,                  sep=":  ") )
+    print( paste("LowestCoverage_g"          , LowestCoverage_g,          sep=":  ") )
+    print( paste("ProportionCoveredSamples_g", ProportionCoveredSamples_g,sep=":  ") )
+    print( paste("RefGenome_g"               , RefGenome_g,               sep=":  ") )
+    print( paste("CytosineContext_g"         , CytosineContext_g,         sep=":  ") )
+    print( paste("Qvalue_g"                  , Qvalue_g,                  sep=":  ") )
+    print( paste("DifferenceOfMethylation_g" , DifferenceOfMethylation_g, sep=":  ") )
+    print( paste("Genomewide_g"              , Genomewide_g,              sep=":  ") )
+    print( paste("WindowSize_g"              , WindowSize_g,              sep=":  ") )
+    print( paste("StepSize_g"                , StepSize_g,                sep=":  ") )
+    print( paste("MinBases_g"                , MinBases_g,                sep=":  ") )
+    print( paste("SpecificRegions_g"         , SpecificRegions_g,         sep=":  ") )
+    print( paste("MinBasesSpecificRegions_g" , MinBasesSpecificRegions_g, sep=":  ") )
+    print( paste("TopPercentageCoverage_g"   , TopPercentageCoverage_g,   sep=":  ") )
+    print( paste("Normalize_g"               , Normalize_g,               sep=":  ") )
+    print("##########################################################")
+    print( paste("PathOfPipiDABS_g"          , PathOfPipiDABS_g,          sep=":  ") )
+    print( paste("AbsolutePathOfFunctions_g" , AbsolutePathOfFunctions_g, sep=":  ") )  
+sink()
+sink( paste(Part1_g,  "/2_Session-Information.txt",  sep = "") )
+    print( sessionInfo() ) 
+sink()
+sink( paste(Part1_g,  "/3_Versions-of-Selected-Packages.txt",  sep = "") )
+    print( paste("ggplot2",    packageVersion("ggplot2"),    sep=":  " ) ) 
+    print( paste("genomation", packageVersion("genomation"), sep=":  " ) )
+    print( paste("methylKit",  packageVersion("methylKit"),  sep=":  " ) )
+    print( paste("DSS",        packageVersion("DSS"),        sep=":  " ) )  
+sink()
+sink( paste(Part1_g,  "/4_Running-Date-Time.txt",  sep = "") )
+     print( Sys.time() )
+     print( Sys.Date() )
+sink()
+
+sink()
+cat("End Part 1. \n\n\n\n\n")
+##############################################################################################################################################################################################
+
+
+
+
+
+## Part 2: Get the input files and some specific regions ...
+##############################################################################################################################################################################################
+cat("\nStart Part 2: \n")
+cat("    Get the input files and some specific regions ... \n")
+
+Part2_g   = paste(OutDir_g,   "2_Get-Input-Files",  sep="/") 
+if( ! file.exists(Part2_g) )   { dir.create(Part2_g,    recursive = TRUE) }
+sink(file = paste(Part2_g, "Part_2.runLog.txt",  sep="/") )
+source( paste(AbsolutePathOfFunctions_g, "3_Get-Input-Files.R", sep="/") )  
+source( paste(AbsolutePathOfFunctions_g, "4_Get-Specific-Regions.R", sep="/") )  
+if(SpecificRegions_g == "NA_NoGenomicRegions" ) {
+    cat("\n\n No folder/path is specified for bed files with some specific genomic regions. \n\n\n")
+}else{
+	sink( paste(Part2_g,  "/7_Specific-Loci-Files.txt",  sep = "") )
+    		print( SpecificLoci_1_g  )
+    		print( SpecificLoci_2_g  )
+    		print( SpecificLoci_3_g  )
+    		print( SpecificLoci_4_g  )
+    		print( SpecificLoci_5_g  )
+    		print( SpecificLoci_6_g  )
+    		print( SpecificLoci_7_g  )
+    		print( SpecificLoci_8_g  )
+    		print( SpecificLoci_9_g  )
+    		print( SpecificLoci_10_g )
+    		print( SpecificLoci_11_g )
+    		print( SpecificLoci_12_g )
+    		print( SpecificLoci_13_g )
+    		print( SpecificLoci_14_g )
+    		print( SpecificLoci_15_g )
+    		print( SpecificLoci_16_g )
+    		print( SpecificLoci_17_g )
+    		print( SpecificLoci_18_g )
+    		print( SpecificLoci_19_g )
+    		print( SpecificLoci_20_g )  
+    		print( SpecificLoci_21_g )
+    		print( SpecificLoci_22_g )
+    		print( SpecificLoci_23_g )
+    		print( SpecificLoci_24_g )
+    		print( SpecificLoci_25_g )
+    		print( SpecificLoci_26_g )
+    		print( SpecificLoci_27_g )
+    		print( SpecificLoci_28_g )
+    		print( SpecificLoci_29_g )
+    		print( SpecificLoci_30_g ) 
+    		print( SpecificLoci_31_g )
+    		print( SpecificLoci_32_g )
+    		print( SpecificLoci_33_g )
+    		print( SpecificLoci_34_g )
+    		print( SpecificLoci_35_g )
+    		print( SpecificLoci_36_g )
+    		print( SpecificLoci_37_g )
+    		print( SpecificLoci_38_g )
+    		print( SpecificLoci_39_g )
+    		print( SpecificLoci_40_g )  
+    		print( SpecificLoci_41_g )
+    		print( SpecificLoci_42_g )
+    		print( SpecificLoci_43_g )
+    		print( SpecificLoci_44_g )
+    		print( SpecificLoci_45_g )
+    		print( SpecificLoci_46_g )
+    		print( SpecificLoci_47_g )
+    		print( SpecificLoci_48_g )
+    		print( SpecificLoci_49_g )
+    		print( SpecificLoci_50_g )  
+    		print( SpecificLoci_51_g )
+    		print( SpecificLoci_52_g )
+    		print( SpecificLoci_53_g )
+    		print( SpecificLoci_54_g )
+    		print( SpecificLoci_55_g )
+    		print( SpecificLoci_56_g )
+    		print( SpecificLoci_57_g )
+    		print( SpecificLoci_58_g )
+    		print( SpecificLoci_59_g )
+    		print( SpecificLoci_60_g )  
+                cat("\n\n\n\n\n")
+	sink()
+}
+sink() 
+cat("End Part 2. \n\n\n\n\n")
+##############################################################################################################################################################################################
+
+
+
+
+
+## Part 3: Read the raw files ...
+##############################################################################################################################################################################################
+suppressPackageStartupMessages( library(methylKit)  ) 
+cat("Start Part 3: \n")
+cat("    Read the raw files ... \n")
+
+Part3_g = paste(OutDir_g, "/3_ReadIn-All-Files",  sep="") 
+if( ! file.exists(Part3_g) )    { dir.create(Part3_g,    recursive = TRUE) }
+sink(file = paste(Part3_g, "Part_3.runLog.txt", sep="/") )
+
+myobj_g = methylKit::methRead(location   = FileLong_All_list_g, 
+                   sample.id  = SampleID_All_list_g, 
+                   assembly   = RefGenome_g, 
+                   pipeline   = "bismarkCoverage",
+                   header     = FALSE, 
+                   sep        = "\t", 
+                   context    = CytosineContext_g,
+                   resolution = "base",  ## allowed values 'base' or 'region'.
+                   treatment  = Treatment_All_vector_g, 
+                   mincov     = LowestCoverage_g
+)
+
+sink( file=paste(Part3_g, "1_All-Samples-in-methylRawList.txt", sep="/") )
+    print(myobj_g)
+sink()
+
+sink( file=paste(Part3_g, "2_Dimensions-of-Each-File-or-Sample.txt", sep="/")  )
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  print( "######################" )
+  print(   FileShort_All_vector_g[i]  )
+  print(   dim(myobj_g[[i]])  )
+  cat("\n\n")
+}
+sink()
+
+sink( file=paste(Part3_g, "3_Dimensions-of-Each-File-or-Sample.Formatted.txt", sep="/")  )
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  cat(   dim(myobj_g[[i]])[1], "\t", dim(myobj_g[[i]])[2], "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+
+sink( file=paste(Part3_g, "4_Check-Each-File-or-Sample.txt", sep="/")  )
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  temp_matrix1 <- read.table(file = FileLong_All_vector_g[i], header = FALSE, sep = "\t" )
+  temp_matrix1_cov = rowSums(temp_matrix1[,c(5,6)])
+  temp_matrix1 = temp_matrix1[temp_matrix1_cov>=LowestCoverage_g, ]
+  temp_matrix2 <- methylKit::getData(myobj_g[[i]])
+  myNumCs_1 = temp_matrix1[,5]   
+  myNumTs_1 = temp_matrix1[,6]  
+  myNumCs_2 = temp_matrix2[,6]  
+  myNumTs_2 = temp_matrix2[,7]  
+  if( identical(myNumCs_1,myNumCs_2) & identical(myNumTs_1,myNumTs_2) ) {
+    cat("#Yes# ",  FileShort_All_vector_g[i], "\n" )
+  }else{
+    cat(" ##Wrong## ",  FileShort_All_vector_g[i], "\n" )
+    stop(FileShort_All_vector_g[i])
+  }
+}
+sink()
+
+
+sink( file=paste(Part3_g, "5_Dimensions-of-Each-Eample.Cs.txt", sep="/")  )
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  cat(   dim(myobj_g[[i]])[1], "\t", dim(myobj_g[[i]])[2], "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+
+sink( file=paste(Part3_g, "6_Coverage-Distribution.Cs.txt", sep="/")  )
+cat(   "min", "\t", "mean", "\t",  "median", "\t",  "max", "\t", "sample", "\n"  )    
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  myTempCov1 = methylKit::getData( myobj_g[[i]] )[,5]
+  cat(   min(myTempCov1), "\t", mean(myTempCov1), "\t",  median(myTempCov1), "\t",  max(myTempCov1), "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+
+
+######## Remove the potential PCR duplicates.
+######## only for the removed C sites.
+myPercentageTop_g = as.numeric(100 - TopPercentageCoverage_g)
+kept.myobj_g     = methylKit::filterByCoverage( myobj_g,  lo.count = LowestCoverage_g,  lo.perc = NULL,               hi.count = NULL,  hi.perc = myPercentageTop_g,  chunk.size = 1e+07,  save.db = FALSE )      
+removed.myobj_g1 = methylKit::filterByCoverage( myobj_g,  lo.count = NULL,              lo.perc = myPercentageTop_g,  hi.count = NULL,  hi.perc = NULL,               chunk.size = 1e+07,  save.db = FALSE )
+Part3_g2 = paste(Part3_g, "/Removed-Cs",  sep="") 
+if( ! file.exists(Part3_g2) ) { dir.create(Part3_g2, recursive = TRUE) }
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  file_name = FileShort_All_vector_g[i]   
+  write.table(methylKit::getData(removed.myobj_g1[[i]])  ,  file = paste(Part3_g2, "/",  file_name, ".txt", sep=""), 
+              append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+              row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+}
+sink( file=paste(Part3_g, "7A_Dimensions-of-Each-Eample.RemovedCs.txt", sep="/")  )
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  cat(   dim(removed.myobj_g1[[i]])[1], "\t", dim(removed.myobj_g1[[i]])[2], "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+sink( file=paste(Part3_g, "7B_Coverage-Distribution.RemovedCs.txt", sep="/")  )
+cat(   "min", "\t", "mean", "\t",  "median", "\t",  "max", "\t", "sample", "\n"  )    
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  myTempCov1 = methylKit::getData( removed.myobj_g1[[i]] )[,5]
+  cat(   min(myTempCov1), "\t", mean(myTempCov1), "\t",  median(myTempCov1), "\t",  max(myTempCov1), "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+########  
+
+
+sink( file=paste(Part3_g, "8A_Dimensions-of-Each-Eample.KeptCs.txt", sep="/")  )
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  cat(   dim(kept.myobj_g[[i]])[1], "\t", dim(kept.myobj_g[[i]])[2], "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+
+sink( file=paste(Part3_g, "8B_Coverage-Distribution.KeptCs.txt", sep="/")  )
+cat(   "min", "\t", "mean", "\t",  "median", "\t",  "max", "\t", "sample", "\n"  )    
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  myTempCov1 = methylKit::getData( kept.myobj_g[[i]] )[,5]
+  cat(   min(myTempCov1), "\t", mean(myTempCov1), "\t",  median(myTempCov1), "\t",  max(myTempCov1), "\t", FileShort_All_vector_g[i], "\n"  )    
+}
+sink()
+
+sink( file=paste(Part3_g, "9_Dimensions-of-Each-Eample.txt", sep="/")  )
+cat("Raw",  "Kept",   "Removed",  "Files", "\n", sep="\t")
+for( i in c(1:length(FileShort_All_vector_g)) ) {
+  cat(    dim(myobj_g[[i]])[1],   dim(kept.myobj_g[[i]])[1],   dim(removed.myobj_g1[[i]])[1] ,   FileShort_All_vector_g[i], "\n" , sep="\t" )    
+}
+sink()
+
+pdf( file=paste(Part3_g, "10_Methylation-Level-Distribution.All-Kept-Removed.pdf", sep="/")  )
+par(mfrow=c(2,3))
+for( i in c(1:length(myobj_g)) ) {
+  methylKit::getMethylationStats(myobj_g[[i]],          plot=TRUE, both.strands=FALSE )
+  methylKit::getMethylationStats(kept.myobj_g[[i]],     plot=TRUE, both.strands=FALSE )
+  methylKit::getMethylationStats(removed.myobj_g1[[i]], plot=TRUE, both.strands=FALSE )
+}
+dev.off()
+
+pdf( file=paste(Part3_g, "11_Coverage-Distribution.All-Kept-Removed.pdf", sep="/")  )
+par(mfrow=c(2,3))
+for( i in c(1:length(myobj_g)) ) {
+  methylKit::getCoverageStats(myobj_g[[i]],          plot=TRUE, both.strands=FALSE )
+  methylKit::getCoverageStats(kept.myobj_g[[i]],     plot=TRUE, both.strands=FALSE )
+  methylKit::getCoverageStats(removed.myobj_g1[[i]], plot=TRUE, both.strands=FALSE )
+
+}
+dev.off()
+
+
+
+##### How to normalize the raw data.
+myobj_nor_g <- kept.myobj_g
+bool_normalize = 0
+if(Normalize_g == "none")   { myobj_nor_g <- kept.myobj_g; bool_normalize=bool_normalize+1 }
+if(Normalize_g == "mean")   { myobj_nor_g <- methylKit::normalizeCoverage(kept.myobj_g,  method = Normalize_g); bool_normalize=bool_normalize+3 }
+if(Normalize_g == "median") { myobj_nor_g <- methylKit::normalizeCoverage(kept.myobj_g,  method = Normalize_g); bool_normalize=bool_normalize+9 }
+cat("\n\n")
+print( paste("bool_normalize"         , bool_normalize,           sep=":  ") )  
+cat("\n\n\n")   
+
+
+ 
+myTempFunction_g <- function() {
+	Part3_g3 = paste(Part3_g, "/Segmentation-of-Each-Sample",  sep="") 
+	if( ! file.exists(Part3_g3) ) { dir.create(Part3_g3, recursive = TRUE) }
+	pdf( file=paste(Part3_g3, "Segmentation_diagnostic_plot.pdf", sep="/")  )
+	for( i in c(1:length(myobj_g)) ) {
+  		res_temp_1 = methylKit::methSeg( myobj_nor_g[[i]] , diagnostic.plot=TRUE, maxInt=100,  minSeg=10,  G=1:5)
+   		file_name = ShortName_All_vector_g[i]   
+   		methylKit::methSeg2bed(res_temp_1,   filename= paste(Part3_g3, "/", file_name,".bed", sep="") )
+	}
+	dev.off()    
+
+	Part3_g4 = paste(Part3_g, "/Segmentation-of-Each-Sample-Unrestricted",  sep="") 
+	if( ! file.exists(Part3_g4) ) { dir.create(Part3_g4, recursive = TRUE) }  
+	pdf( file=paste(Part3_g4, "Segmentation_diagnostic_plot.pdf", sep="/")  )
+	for( i in c(1:length(myobj_g)) ) {
+		 res_temp_1 = methylKit::methSeg( myobj_nor_g[[i]] , diagnostic.plot=TRUE, maxInt=100,  minSeg=10 )
+		 file_name = ShortName_All_vector_g[i]   
+  		 methylKit::methSeg2bed(res_temp_1,   filename= paste(Part3_g4, "/", file_name,".bed", sep="") )
+	}
+	dev.off()    
+}
+tryCatch(
+    myTempFunction_g(),
+    error = function(err){"Error:myTempFunction_g_Segmentation_0000"}
+)
+ 
+
+################Cover All Samples
+cat("\n\n\n")
+my_methylBase_CoverAll_g  = methylKit::unite( myobj_nor_g,  destrand=FALSE,   mc.cores=numCores_g   )   
+
+sink( file=paste(Part3_g, "12A_methylBase-CoverAllSamples.dimension.txt", sep="/")  )
+  print( dim(my_methylBase_CoverAll_g) ) 
+sink()
+
+file14_part3_g = paste(Part3_g, "12B_methylBase-CoverAllSamples.txt", sep="/")   
+write.table( methylKit::getData(my_methylBase_CoverAll_g) ,  file =file14_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+
+sink( file=paste(Part3_g, "12C_methylBase-CoverAllSamples.print.txt", sep="/")  )
+    print( my_methylBase_CoverAll_g  )
+sink()
+
+file16_part3_g = paste(Part3_g, "12D_methylBase-CoverAllSamples.summary.txt", sep="/")   
+write.table( summary(my_methylBase_CoverAll_g)  ,  file =file16_part3_g, 
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+             row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+rm(my_methylBase_CoverAll_g)
+################
+
+
+number_vector_g = c( number_1_g  , number_2_g  ,    number_3_g  ,   number_4_g  ,  number_5_g   , 
+                     number_6_g  , number_7_g  ,    number_8_g  ,   number_9_g  ,  number_10_g  ,
+                     number_11_g , number_12_g ,    number_13_g ,   number_14_g ,  number_15_g  , 
+                     number_16_g , number_17_g ,    number_18_g ,   number_19_g ,  number_20_g   ) 
+number_vector_g
+number_vector_g = number_vector_g[number_vector_g>=1]
+
+
+numberCovered_vector_g = c( numberCovered_1_g  , numberCovered_2_g  ,    numberCovered_3_g  , numberCovered_4_g  ,  numberCovered_5_g   , 
+                            numberCovered_6_g  , numberCovered_7_g   ,   numberCovered_8_g  , numberCovered_9_g   , numberCovered_10_g  ,
+                            numberCovered_11_g , numberCovered_12_g ,    numberCovered_13_g , numberCovered_14_g ,  numberCovered_15_g  , 
+                            numberCovered_16_g , numberCovered_17_g  ,   numberCovered_18_g , numberCovered_19_g  , numberCovered_20_g   ) 
+numberCovered_vector_g
+numberCovered_vector_g = numberCovered_vector_g[numberCovered_vector_g>=1]
+
+numberCovered_min_g    = min(numberCovered_vector_g)
+my_methylBase_object_g  = methylKit::unite( myobj_nor_g,  destrand=FALSE,   mc.cores=8 ,  min.per.group = as.integer(numberCovered_min_g) )
+dim(my_methylBase_object_g)
+sink( file=paste(Part3_g, "13A_methylBase-object.dimension.FirstStep.txt", sep="/")  )
+  print( dim(my_methylBase_object_g) ) 
+sink()
+file14_part3_g = paste(Part3_g, "13B_methylBase-object.FirstStep.txt", sep="/")   
+write.table( methylKit::getData(my_methylBase_object_g) ,  file =file14_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+sink( file=paste(Part3_g, "13C_methylBase-object.print.FirstStep.txt", sep="/")  )
+    print( my_methylBase_object_g  )
+sink()
+file16_part3_g = paste(Part3_g, "13D_methylBase-object.summary.FirstStep.txt", sep="/")   
+write.table( summary(my_methylBase_object_g)  ,  file =file16_part3_g, 
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+             row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+
+rm(myobj_g)
+rm(kept.myobj_g)
+rm(removed.myobj_g1)
+rm(myobj_nor_g)
+
+
+rmSomeRows_f <- function(vector1, number_vector1, numberCovered_vector1) {
+  myGroup_1  = c()
+  myGroup_2  = c()
+  myGroup_3  = c()
+  myGroup_4  = c()
+  myGroup_5  = c()
+  myGroup_6  = c()
+  myGroup_7  = c()
+  myGroup_8  = c()
+  myGroup_9  = c()
+  myGroup_10 = c()
+  myGroup_11 = c()
+  myGroup_12 = c()
+  myGroup_13 = c()
+  myGroup_14 = c()
+  myGroup_15 = c()
+  myGroup_16 = c()
+  myGroup_17 = c()
+  myGroup_18 = c()
+  myGroup_19 = c()
+  myGroup_20 = c()  
+  myBool1 = 0
+  ##print(vector1)
+  for(i in c(1:length(number_vector1))) {
+          if(i == 1)  {myGroup_1  = c((4+1): (4+3*number_vector1[i])) ; myTemp=vector1[myGroup_1]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}  }  
+          if(i == 2)  {myGroup_2  = c((myGroup_1[length(myGroup_1)]+1): (myGroup_1[length(myGroup_1)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_2]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }    
+          if(i == 3)  {myGroup_3  = c((myGroup_2[length(myGroup_2)]+1): (myGroup_2[length(myGroup_2)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_3]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 4)  {myGroup_4  = c((myGroup_3[length(myGroup_3)]+1): (myGroup_3[length(myGroup_3)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_4]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 5)  {myGroup_5  = c((myGroup_4[length(myGroup_4)]+1): (myGroup_4[length(myGroup_4)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_5]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 6)  {myGroup_6  = c((myGroup_5[length(myGroup_5)]+1): (myGroup_5[length(myGroup_5)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_6]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 7)  {myGroup_7  = c((myGroup_6[length(myGroup_6)]+1): (myGroup_6[length(myGroup_6)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_7]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 8)  {myGroup_8  = c((myGroup_7[length(myGroup_7)]+1): (myGroup_7[length(myGroup_7)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_8]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 9)  {myGroup_9  = c((myGroup_8[length(myGroup_8)]+1): (myGroup_8[length(myGroup_8)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_9]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 10) {myGroup_10 = c((myGroup_9[length(myGroup_9)]+1): (myGroup_9[length(myGroup_9)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_10]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}  } 
+          if(i == 11) {myGroup_11 = c((myGroup_10[length(myGroup_10)]+1): (myGroup_10[length(myGroup_10)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_11]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 12) {myGroup_12 = c((myGroup_11[length(myGroup_11)]+1): (myGroup_11[length(myGroup_11)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_12]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 13) {myGroup_13 = c((myGroup_12[length(myGroup_12)]+1): (myGroup_12[length(myGroup_12)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_13]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 14) {myGroup_14 = c((myGroup_13[length(myGroup_13)]+1): (myGroup_13[length(myGroup_13)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_14]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 15) {myGroup_15 = c((myGroup_14[length(myGroup_14)]+1): (myGroup_14[length(myGroup_14)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_15]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 16) {myGroup_16 = c((myGroup_15[length(myGroup_15)]+1): (myGroup_15[length(myGroup_15)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_16]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 17) {myGroup_17 = c((myGroup_16[length(myGroup_16)]+1): (myGroup_16[length(myGroup_16)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_17]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 18) {myGroup_18 = c((myGroup_17[length(myGroup_17)]+1): (myGroup_17[length(myGroup_17)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_18]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 19) {myGroup_19 = c((myGroup_18[length(myGroup_18)]+1): (myGroup_18[length(myGroup_18)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_19]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   }  
+          if(i == 20) {myGroup_20 = c((myGroup_19[length(myGroup_19)]+1): (myGroup_19[length(myGroup_19)]+3*number_vector1[i]) ); myTemp=vector1[myGroup_20]; if( length(myTemp[is.na(myTemp)]) > 3*(number_vector1[i]-numberCovered_vector1[i]) ) {myBool1 = myBool1+1}   } 
+  }
+  myReturn = rep("ABCDZ", times=length(vector1))
+  myReturn[1:3] = vector1[1:3]
+  print(myBool1)
+  if(myBool1 == 0) {myReturn = vector1}
+  return(myReturn)
+}
+
+refinedMatrix_g = t( apply(X=methylKit::getData(my_methylBase_object_g), MARGIN=1, FUN=rmSomeRows_f,  number_vector1=number_vector_g,  numberCovered_vector1=numberCovered_vector_g)  )
+colnames(refinedMatrix_g) = colnames( methylKit::getData(my_methylBase_object_g) )  
+file17_part3_g = paste(Part3_g, "14_RefinedMatrix.txt", sep="/")   
+write.table( refinedMatrix_g ,  file =file17_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+
+
+index_1_g = (refinedMatrix_g[,4] != "ABCDZ")
+refinedMatrix2_g = refinedMatrix_g[index_1_g,]
+file18_part3_g = paste(Part3_g, "15_RefinedMatrix.Selected.txt", sep="/")   
+write.table( refinedMatrix2_g ,  file =file18_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+refinedMatrix2_regions_g = refinedMatrix2_g[,c(1:3)]
+refinedMatrix2_regions_g = as.data.frame(refinedMatrix2_regions_g)
+colnames(refinedMatrix2_regions_g) = c("chr", "start", "end")
+refinedMatrix3_g = makeGRangesFromDataFrame(refinedMatrix2_regions_g, ignore.strand=TRUE)
+my_methylBase_finalobject_g = selectByOverlap(my_methylBase_object_g, refinedMatrix3_g)  
+sink( file=paste(Part3_g, "16A_methylBase-Final-Object.Dimension.txt", sep="/")  )
+  print( dim(my_methylBase_finalobject_g) ) 
+sink()
+file20_part3_g = paste(Part3_g, "16B_methylBase-Final-Object.txt", sep="/")   
+write.table( methylKit::getData(my_methylBase_finalobject_g) ,  file =file20_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+sink( file=paste(Part3_g, "16C_methylBase-Final-Object.Print.txt", sep="/")  )
+    print( my_methylBase_finalobject_g  )
+sink()
+file21_part3_g = paste(Part3_g, "16D_methylBase-Final-Object.Summary.txt", sep="/")   
+write.table( summary(my_methylBase_finalobject_g)  ,  file =file21_part3_g, 
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+             row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+rm(refinedMatrix2_g)
+rm(refinedMatrix2_regions_g)
+rm(refinedMatrix3_g)
+rm(index_1_g)
+
+
+index_1_g = (refinedMatrix_g[,4] == "ABCDZ")
+refinedMatrix2_g = refinedMatrix_g[index_1_g,]
+file18_part3_g = paste(Part3_g, "17_RefinedMatrix.Removed.txt", sep="/")   
+write.table( refinedMatrix2_g ,  file =file18_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+refinedMatrix2_regions_g = refinedMatrix2_g[,c(1:3)]
+refinedMatrix2_regions_g = as.data.frame(refinedMatrix2_regions_g)
+colnames(refinedMatrix2_regions_g) = c("chr", "start", "end")
+refinedMatrix3_g = makeGRangesFromDataFrame(refinedMatrix2_regions_g, ignore.strand=TRUE)
+my_methylBase_removed_g = selectByOverlap(my_methylBase_object_g, refinedMatrix3_g)  
+sink( file=paste(Part3_g, "18A_methylBase.Removed.Dimension.txt", sep="/")  )
+  print( dim(my_methylBase_removed_g) ) 
+sink()
+file20_part3_g = paste(Part3_g, "18B_methylBase.Removed.txt", sep="/")   
+write.table( methylKit::getData(my_methylBase_removed_g) ,  file =file20_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+            row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+sink( file=paste(Part3_g, "18C_methylBase.Removed.Print.txt", sep="/")  )
+    print( my_methylBase_removed_g  )
+sink()
+file21_part3_g = paste(Part3_g, "18D_methylBase.Removed.Summary.txt", sep="/")   
+write.table( summary(my_methylBase_removed_g)  ,  file =file21_part3_g, 
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".", 
+             row.names = FALSE,  col.names = TRUE, qmethod = c("escape", "double"),  fileEncoding = "")
+rm(refinedMatrix_g)
+rm(refinedMatrix2_g)
+rm(refinedMatrix2_regions_g)
+rm(refinedMatrix3_g)
+rm(index_1_g)
+rm(my_methylBase_removed_g)
+rm(my_methylBase_object_g)
+
+
+file22_part3_g = paste(Part3_g, "19_Cs-for-Further-Analysis.txt", sep="/")   
+write.table( methylKit::getData(my_methylBase_finalobject_g) ,  file =file22_part3_g, 
+            append = FALSE, quote = FALSE, sep = "\t",  row.names = FALSE,  col.names = TRUE )
+
+sink() 
+cat("End Part 3. \n\n\n\n\n")
+##############################################################################################################################################################################################
+
+
+
+
+
+## Part 4: Analyze some specific regions by methylKit and DSS...
+################################################################################
+cat("Start Part 4: \n")
+cat("    Analyze some specific regions by using methylKit and DSS ... \n\n")
+
+Part4_g = paste(OutDir_g, "/4_Analyze-Specific-Regions",  sep="") 
+if( ! file.exists(Part4_g) )    { dir.create(Part4_g,    recursive = TRUE) }
+sink(file = paste(Part4_g, "Part_4.runLog.txt", sep="/") )
+
+functionsByContext_1_g = ""
+if(CytosineContext_g=="CpG") { 
+       functionsByContext_1_g="14A_For-Each-Type.R"  
+}else{
+  functionsByContext_1_g="14B_For-Each-Type.R"  
+}
+
+source( paste(AbsolutePathOfFunctions_g, "5_Only-For-Figures.R", sep="/"                   )  )  
+source( paste(AbsolutePathOfFunctions_g, "6_Violin-Box-Plots.R", sep="/"                   )  ) 
+source( paste(AbsolutePathOfFunctions_g, "7_Heatmaps.R", sep="/"                           )  ) 
+source( paste(AbsolutePathOfFunctions_g, "8_Statistical-Hypothesis-Testing.R", sep="/"     )  ) 
+source( paste(AbsolutePathOfFunctions_g, "9_Correlation-Covariance-Matrices.R", sep="/"    )  )  
+source( paste(AbsolutePathOfFunctions_g, "10_Hierarchical-Clustering-MethylKit.R", sep="/" )  )  
+source( paste(AbsolutePathOfFunctions_g, "11_Hierarchical-Clustering-Hclust.R", sep="/"    )  ) 
+source( paste(AbsolutePathOfFunctions_g, "12_PCA-MethylKit-Further-Prcomp.R", sep="/"      )  ) 
+source( paste(AbsolutePathOfFunctions_g, "13_Multidimensional-Scaling.R", sep="/"          )  ) 
+source( paste(AbsolutePathOfFunctions_g,  functionsByContext_1_g,  sep="/"                 )  ) 
+source( paste(AbsolutePathOfFunctions_g, "15_DMCs-DMRs.R", sep="/"                         )  )
+source( paste(AbsolutePathOfFunctions_g, "16_diffMe-select.R", sep="/"                     )  )
+source( paste(AbsolutePathOfFunctions_g, "17_DMCs-DMRs-Annotation.R", sep="/"              )  )
+source( paste(AbsolutePathOfFunctions_g, "18_Main-Function-for-speLoci.R", sep="/"         )  )
+source( paste(AbsolutePathOfFunctions_g, "19_Compare-20groups-speLoci.R",    sep="/"       )  )
+
+myCompare_20groups_speLoci_g(methylBase_temp_1=my_methylBase_finalobject_g,   myPath_temp_1=Part4_g,    qvalue_temp_1=Qvalue_g,    
+	                     differenceOfMethylation_temp_1=DifferenceOfMethylation_g,  minBases_temp_1=MinBasesSpecificRegions_g 
+)                                              
+
+sink() 
+cat("End Part 4. \n\n\n\n\n")
+################################################################################
+
+
+
+
+
+## Part 5: Analyze tiling windows by methylKit and DSS ...
+################################################################################
+cat("Start Part 5: \n")
+cat("    Analyze tiling windows by using  methylKit and DSS ... \n\n")
+
+Part9_g = paste(OutDir_g, "/5_Analyze-Tiles",  sep="") 
+if( ! file.exists(Part9_g) )    { dir.create(Part9_g,    recursive = TRUE) }
+sink(file = paste(Part9_g, "Part_5.runLog.txt", sep="/") )
+source( paste(AbsolutePathOfFunctions_g, "20_MainFunction-for-Tiles.R", sep="/"        )  )
+source( paste(AbsolutePathOfFunctions_g, "21_Compare-20groups-Tiles.R", sep="/"        )  )
+
+if(Genomewide_g == TRUE) {
+    myCompare_20groups_tiles_g(methylBase_temp_1=my_methylBase_finalobject_g,   myPath_temp_1=Part9_g,   qvalue_temp_1=Qvalue_g,   differenceOfMethylation_temp_1=DifferenceOfMethylation_g,                               
+                               windowSize_temp_1=WindowSize_g,    stepSize_temp_1=StepSize_g,  minBases_temp_1=MinBases_g                                                                            
+    )     
+}
+                                              
+sink() 
+cat("End Part 5. \n\n\n\n\n")
+################################################################################
+
+
+
+
+
+## Part 6: Analyze 500-bp tiles ...
+################################################################################
+cat("Start Part 6: \n")
+cat("    Analyze 500-bp tiles ... \n\n")
+
+
+Part11_g = paste(OutDir_g, "/6_Analyze-500-bp-tiles",  sep="") 
+if( ! file.exists(Part11_g) )    { dir.create(Part11_g,    recursive = TRUE) }
+sink(file = paste(Part11_g, "Part_6.runLog.txt", sep="/") )
+
+if(Genomewide_g == TRUE) {
+    myCompare_20groups_tiles_g(methylBase_temp_1=my_methylBase_finalobject_g,   myPath_temp_1=Part11_g,   qvalue_temp_1=Qvalue_g,   differenceOfMethylation_temp_1=DifferenceOfMethylation_g,                               
+                               windowSize_temp_1=500,    stepSize_temp_1=500,  minBases_temp_1=6                                                                            
+    )                               
+}
+                                           
+sink() 
+cat("End Part 8. \n\n\n\n\n")
+################################################################################
+
+
+
+
+
+## Part 7: Analyze 1000-bp tiles ...
+################################################################################
+cat("Start Part 7: \n")
+cat("    Analyze 1000-bp tiles ... \n\n")
+
+
+Part12_g = paste(OutDir_g, "/7_Analyze-1000-bp-tiles",  sep="") 
+if( ! file.exists(Part12_g) )    { dir.create(Part12_g,    recursive = TRUE) }
+sink(file = paste(Part12_g, "Part_6.runLog.txt", sep="/") )
+
+if(Genomewide_g == TRUE) {
+    myCompare_20groups_tiles_g(methylBase_temp_1=my_methylBase_finalobject_g,   myPath_temp_1=Part12_g,   qvalue_temp_1=Qvalue_g,   differenceOfMethylation_temp_1=DifferenceOfMethylation_g,                               
+                               windowSize_temp_1=1000,    stepSize_temp_1=1000,  minBases_temp_1=11                                                                            
+    )                               
+}
+                                           
+sink() 
+cat("End Part 7. \n\n\n\n\n")
+################################################################################
+
+
+
+
+
+## Part 8: Analyze 1bp C sites by methylKit and DSS ...
+################################################################################
+cat("Start Part 8: \n")
+cat("    Analyze 1bp C sites by using methylKit and DSS ... \n\n")
+
+
+Part10_g = paste(OutDir_g, "/8_Analyze-1bp-sites",  sep="") 
+if( ! file.exists(Part10_g) )    { dir.create(Part10_g,    recursive = TRUE) }
+sink(file = paste(Part10_g, "Part_8.runLog.txt", sep="/") )
+
+source( paste(AbsolutePathOfFunctions_g, "22_Main-Function-for-1bp.R", sep="/"        )  )
+source( paste(AbsolutePathOfFunctions_g, "23_Compare-20groups-1bp.R", sep="/"        )  )
+
+if(Genomewide_g == TRUE) {
+    myCompare_20groups_1bp_g(methylBase_temp_1=my_methylBase_finalobject_g,    myPath_temp_1=Part10_g,   qvalue_temp_1=Qvalue_g,                              
+                             differenceOfMethylation_temp_1=DifferenceOfMethylation_g                                  
+    )  
+}
+                                           
+sink() 
+cat("End Part 8. \n\n\n\n\n")
+################################################################################
+
+
+
+
+
+
+
+
+
+
+              
