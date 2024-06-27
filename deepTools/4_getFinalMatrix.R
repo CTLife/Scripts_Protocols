@@ -86,13 +86,13 @@ dim(rawMatrix_2)
 DF_B[1:5,]
 
 write.table( DF_B ,   file = paste(outDir_g, "1A.matrix.regions.txt", sep="/"), 
-             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".",  row.names = F,  col.names = F )
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".",  row.names = F,  col.names = T )
 
 write.table( rawMatrix_2 ,   file = paste(outDir_g, "1B.matrix.txt", sep="/"), 
-             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".",  row.names = F,  col.names = F )
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".",  row.names = F,  col.names = T )
 
 write.table( DF_A[bool1 , 1:3] ,   file = paste(outDir_g, "1C.regions.txt", sep="/"), 
-             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".",  row.names = F,  col.names = F )
+             append = FALSE, quote = FALSE, sep = "\t", eol = "\n", na = "NA", dec = ".",  row.names = F,  col.names = T )
  
 
  
